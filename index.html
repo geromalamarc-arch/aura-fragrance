@@ -1,4 +1,5 @@
-<html style="margin: 0; padding: 0">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,1177 +41,1255 @@
       content="https://p-dola-image-sign-sgnontt.byteintl.net/tos-mya-i-uo7y4d541q/6b0284bce5144846914e8bdeccfe063c.jpg~tplv-0es2k971ck-24-95-exif:1200:630.image"
     />
 
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons (100% Free Tier Only) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
     <script>
-      (function () {
-        var s = document.createElement("style");
-        s.textContent = `
-    :root{
-      --bg:#fdfaf7;
-      --card:#ffffff;
-      --text:#2a1f1a;
-      --muted:#7a6b63;
-      --accent:#c9a37a;
-      --accent-soft:rgba(201,163,122,.15);
-      --accent2:#d4a5a5;
-      --border:rgba(42,31,26,.08);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:90px}
-    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);margin:0;padding-bottom:90px}
-    .font-serif{font-family:'Playfair Display',serif}
-    .fade-in{animation:fade .6s ease}
-    @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-    .nav-link{position:relative}
-    .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s}
-    .nav-link:hover::after,.nav-link.active::after{width:100%}
-    .banner-gradient{background:linear-gradient(135deg,var(--accent-soft),rgba(212,165,165,.18))}
-    .btn-primary{background:var(--accent);color:#fff;transition:all .25s ease;box-shadow:0 4px 14px rgba(201,163,122,.3)}
-    .btn-primary:hover{background:#b89269;transform:translateY(-2px);box-shadow:0 8px 20px rgba(201,163,122,.35)}
-    .btn-outline{border:1.5px solid var(--accent);color:var(--accent);transition:all .25s ease}
-    .btn-outline:hover{background:var(--accent);color:#fff}
-    .step-card{transition:all .3s ease}
-    .step-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(42,31,26,.08)}
-    .benefit-item{transition:all .2s ease}
-    .benefit-item:hover{background:var(--accent-soft);transform:translateX(4px)}
-    .reseller-main{background:linear-gradient(135deg,#fff9f2 0%,#fff5f5 50%,#faf5ff 100%)}
-    .highlight-box{border-left:4px solid var(--accent)}
-    .scent-card{transition:all .3s ease}
-    .scent-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(42,31,26,.08)}
-    .faq-q{cursor:pointer;transition:all .2s ease}
-    .faq-q:hover{background:var(--accent-soft)}
-    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
-    .faq-item.open .faq-a{max-height:300px}
-    .faq-item.open .faq-icon{transform:rotate(45deg)}
-    .faq-icon{transition:transform .25s ease}
-    .promise-badge{background:linear-gradient(135deg,#c9a37a,#b89269);color:#fff;box-shadow:0 10px 25px rgba(201,163,122,.35)}
-    .float-messenger{position:fixed;right:18px;bottom:100px;z-index:60;width:60px;height:60px;border-radius:50%;background:#0084ff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,132,255,.4);transition:all .25s ease}
-    .float-messenger:hover{transform:scale(1.08);box-shadow:0 12px 30px rgba(0,132,255,.5)}
-    .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:14px 18px;background:var(--accent);color:#fff;text-align:center;font-weight:600;box-shadow:0 -6px 20px rgba(0,0,0,.12)}
-    @media(min-width:768px){.sticky-cta{display:none}.float-messenger{bottom:28px}}
-  `;
-        document.head.appendChild(s);
-      })();
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#D4AF37", // AURA GOLD
+              secondary: "#F0E6CC", // CREAM
+              dark: "#1A1A1A", // CHARCOAL
+              light: "#F9F5F0", // OFF-WHITE
+              muted: "#7A7A7A", // SOFT GRAY
+            },
+            fontFamily: {
+              serif: ["Playfair Display", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+        .text-shadow {
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .bg-gradient-luxury {
+          background: linear-gradient(135deg, #f9f5f0 0%, #f0e6cc 100%);
+        }
+        .card-hover {
+          transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+          @apply bg-primary text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-primary/90 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5;
+        }
+        .btn-outline {
+          @apply border-2 border-primary text-primary font-semibold py-3 px-6 rounded-full hover:bg-primary hover:text-white transition-all duration-300;
+        }
+        .badge {
+          @apply bg-primary/15 text-primary text-xs font-medium py-1 px-2 rounded-full whitespace-nowrap;
+        }
+        .badge.best-seller {
+          @apply bg-gradient-to-r from-primary to-amber-500 text-white shadow-md;
+        }
+        .back-to-top {
+          @apply fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg z-50 opacity-0 invisible transition-all duration-300;
+        }
+        .back-to-top.show {
+          @apply opacity-100 visible;
+        }
+        .icon-hover {
+          transition: all 0.3s ease;
+        }
+        .card-hover:hover .icon-hover {
+          filter: brightness(1.1) drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+        /* Prevent content under fixed bottom CTA */
+        body {
+          padding-bottom: 80px;
+        }
+        /* FAQ chevron smooth flip */
+        .faq-question i {
+          transform-origin: center;
+          transition: transform 0.3s ease;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <div>
+  <body class="font-sans text-dark bg-light antialiased">
+    <!-- Navigation -->
+    <header
+      class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent"
+      id="navbar"
+    >
       <div
-        class="banner-gradient text-center py-3 px-4 text-sm font-semibold"
-        style="color: var(--text)"
+        class="container mx-auto px-4 py-3 flex items-center justify-between"
       >
-        ✨ BECOME AN AURA RESELLER — ZERO CAPITAL · FREE TESTER · KEEP 100% OF
-        YOUR MARKUP ✨
-      </div>
+        <!-- Logo -->
+        <a href="#home" class="flex items-center space-x-2">
+          <i class="fas fa-perfume text-primary text-2xl"></i>
+          <span class="font-serif text-xl font-bold"
+            >AURA <span class="text-primary">Parfums</span></span
+          >
+        </a>
 
-      <div
-        class="text-center py-4 px-5 border-b"
-        style="background: #fff8ee; border-color: var(--border)"
-      >
-        <p
-          class="font-semibold text-base md:text-lg mb-1"
-          style="color: var(--text)"
-        >
-          👋 Hi! You scanned the QR on an <strong>AURA perfume bottle</strong>!
-        </p>
-        <p
-          class="text-sm md:text-base max-w-3xl mx-auto"
-          style="color: var(--muted)"
-        >
-          This website is for people who want to
-          <strong style="color: var(--accent)"
-            >EARN EXTRA INCOME selling AURA Parfums</strong
-          >. We do <strong>not</strong> sell directly to customers here — all
-          orders go through our authorized resellers.
-          <br class="hidden md:block" />Keep scrolling to learn how you can
-          start with <strong>₱0 capital, free tester, and zero risk</strong>.
-        </p>
-      </div>
-
-      <nav
-        class="sticky top-0 z-40 backdrop-blur-md"
-        style="
-          background: rgba(253, 250, 247, 0.96);
-          border-bottom: 1px solid var(--border);
-        "
-      >
-        <div
-          class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between"
-        >
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center space-x-8">
           <a
             href="#home"
-            class="font-serif text-2xl md:text-3xl font-bold tracking-wide"
-            style="color: var(--text)"
-            >AURA <span style="color: var(--accent)">Parfums</span></a
+            class="text-dark hover:text-primary transition-colors duration-200"
+            >Home</a
           >
-          <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#home" class="nav-link active">Home</a>
-            <a href="#scents" class="nav-link">Our Scents</a>
-            <a href="#reseller" class="nav-link">Reseller Program</a>
-            <a href="#faq" class="nav-link">FAQ</a>
-            <a href="#portal" class="nav-link">Reseller Portal</a>
-            <a href="#contact" class="nav-link">Contact</a>
-          </div>
-          <button onclick="toggleMenu()" class="md:hidden p-2">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          </button>
-        </div>
-        <div
-          id="mobile-menu"
-          class="hidden md:hidden px-5 pb-5 space-y-3 text-sm font-medium border-t"
-          style="border-color: var(--border)"
-        >
-          <a href="#home" onclick="toggleMenu()" class="block py-2">Home</a>
-          <a href="#scents" onclick="toggleMenu()" class="block py-2"
+          <a
+            href="#scents"
+            class="text-dark hover:text-primary transition-colors duration-200"
             >Our Scents</a
           >
-          <a href="#reseller" onclick="toggleMenu()" class="block py-2"
+          <a
+            href="#reseller"
+            class="text-dark hover:text-primary transition-colors duration-200"
             >Reseller Program</a
           >
-          <a href="#faq" onclick="toggleMenu()" class="block py-2">FAQ</a>
-          <a href="#portal" onclick="toggleMenu()" class="block py-2"
+          <a
+            href="#faq"
+            class="text-dark hover:text-primary transition-colors duration-200"
+            >FAQ</a
+          >
+          <a
+            href="#portal"
+            class="text-dark hover:text-primary transition-colors duration-200"
             >Reseller Portal</a
           >
-          <a href="#contact" onclick="toggleMenu()" class="block py-2"
+          <a
+            href="#contact"
+            class="text-dark hover:text-primary transition-colors duration-200"
+            >Contact</a
+          >
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-dark hover:text-primary transition-colors duration-200 p-2"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 invisible transition-all duration-300"
+      >
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-1">
+          <a
+            href="#home"
+            class="mobile-link text-dark hover:text-primary hover:bg-light transition-all duration-200 py-3 px-2 rounded-lg"
+            >Home</a
+          >
+          <a
+            href="#scents"
+            class="mobile-link text-dark hover:text-primary hover:bg-light transition-all duration-200 py-3 px-2 rounded-lg"
+            >Our Scents</a
+          >
+          <a
+            href="#reseller"
+            class="mobile-link text-dark hover:text-primary hover:bg-light transition-all duration-200 py-3 px-2 rounded-lg"
+            >Reseller Program</a
+          >
+          <a
+            href="#faq"
+            class="mobile-link text-dark hover:text-primary hover:bg-light transition-all duration-200 py-3 px-2 rounded-lg"
+            >FAQ</a
+          >
+          <a
+            href="#portal"
+            class="mobile-link text-dark hover:text-primary hover:bg-light transition-all duration-200 py-3 px-2 rounded-lg"
+            >Reseller Portal</a
+          >
+          <a
+            href="#contact"
+            class="mobile-link text-dark hover:text-primary hover:bg-light transition-all duration-200 py-3 px-2 rounded-lg"
             >Contact</a
           >
         </div>
-      </nav>
+      </div>
+    </header>
 
-      <section id="home" class="fade-in">
-        <div class="max-w-4xl mx-auto px-5 py-16 md:py-24 text-center">
-          <p
-            class="text-xs md:text-sm uppercase tracking-[0.25em] mb-5"
-            style="color: var(--accent)"
-          >
-            AURA Parfums Reseller Opportunity
-          </p>
-          <h1
-            class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8"
-            style="color: var(--text)"
-          >
-            Turn premium <span style="color: var(--accent)">scents</span
-            ><br />into your
-            <span style="color: var(--accent)">extra income</span>
-          </h1>
-          <p
-            class="text-lg md:text-2xl leading-relaxed mb-8 max-w-3xl mx-auto"
-            style="color: var(--muted)"
-          >
-            Start your own perfume business with
-            <strong style="color: var(--text)"
-              >no capital, no risk, and no need to buy products upfront</strong
-            >. We give you a free tester — you sell, you earn.
-          </p>
-          <div
-            class="highlight-box pl-5 py-3 mb-10 rounded-r-lg max-w-2xl mx-auto text-left md:text-center"
-            style="background: var(--accent-soft)"
-          >
-            <p
-              class="font-medium text-base md:text-lg"
-              style="color: var(--text)"
+    <!-- Main Content -->
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section id="home" class="py-20 bg-gradient-luxury">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <span class="badge inline-block mb-4">
+              <i class="fas fa-rocket mr-1"></i> AURA Parfums Reseller
+              Opportunity
+            </span>
+            <h1
+              class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight break-words"
             >
-              💡
-              <strong style="color: var(--accent)"
-                >Everything is handled for you:</strong
-              >
-              Free tester · No stock needed · You set your price · You get the
-              perfume first · You pay only when you have a confirmed order
+              Turn Premium <span class="text-primary">Scents</span><br />Into
+              Your <span class="text-primary">Extra Income</span>
+            </h1>
+            <p class="text-lg md:text-xl text-muted mb-8 leading-relaxed">
+              Start your own perfume business with
+              <strong class="text-dark"
+                >no capital, no risk, and no need to buy products
+                upfront</strong
+              >. We give you a free tester — you sell, you earn.
             </p>
-          </div>
-          <div class="flex flex-wrap gap-4 justify-center">
-            <a
-              href="#reseller"
-              class="btn-primary px-10 py-4.5 rounded-full font-semibold text-lg"
-              >✨ Learn How to Become a Reseller</a
-            >
-            <a
-              href="#contact"
-              class="btn-outline px-10 py-4.5 rounded-full font-semibold text-lg"
-              >💬 Message Us to Join Now</a
-            >
-          </div>
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+              <a href="#reseller" class="btn-primary">
+                <i class="fas fa-info-circle mr-2"></i> Learn How to Become a
+                Reseller
+              </a>
+              <a href="#contact" class="btn-outline">
+                <i class="fas fa-comment mr-2"></i> Message Us to Join Now
+              </a>
+            </div>
 
-          <div
-            class="promise-badge mt-12 inline-block text-left md:text-center px-7 py-5 rounded-2xl max-w-2xl"
-          >
-            <p class="font-bold text-lg md:text-xl mb-1">
-              ⚠️ OUR #1 PROMISE TO YOU: <u>YOU WILL NEVER PAY US FIRST</u>
-            </p>
-            <p class="text-sm md:text-base opacity-95">
-              ✅ We give you the perfume → ✅ You deliver to your customer → ✅
-              You collect full payment → ✅ <strong>Only then</strong> you pay
-              us our original price.<br /><strong
-                >🚫 Zero risk · 🚫 No hidden fees · 🚫 No excuses.</strong
-              >
-            </p>
-          </div>
+            <!-- Selling Point Badge -->
+            <div class="bg-white p-6 rounded-2xl shadow-md max-w-2xl mx-auto">
+              <div class="flex items-center space-x-3">
+                <div class="bg-primary/15 p-3 rounded-full flex-shrink-0">
+                  <i class="fas fa-shield-alt text-primary text-xl"></i>
+                </div>
+                <div class="text-left">
+                  <h3 class="font-bold text-lg mb-1">OUR #1 PROMISE TO YOU</h3>
+                  <p class="text-muted">
+                    <strong class="text-primary"
+                      >YOU WILL NEVER PAY US FIRST.</strong
+                    >
+                    Get perfume → Deliver → Get paid → Pay us. Zero risk,
+                    always.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-16">
-            <div
-              class="bg-white p-5 rounded-2xl border"
-              style="border-color: var(--border)"
-            >
-              <p
-                class="font-serif text-3xl md:text-4xl font-bold mb-1"
-                style="color: var(--accent)"
-              >
-                ₱0
-              </p>
-              <p class="text-sm" style="color: var(--muted)">
-                Capital to start
-              </p>
-            </div>
-            <div
-              class="bg-white p-5 rounded-2xl border"
-              style="border-color: var(--border)"
-            >
-              <p
-                class="font-serif text-3xl md:text-4xl font-bold mb-1"
-                style="color: var(--accent)"
-              >
-                FREE
-              </p>
-              <p class="text-sm" style="color: var(--muted)">
-                Tester kit included
-              </p>
-            </div>
-            <div
-              class="bg-white p-5 rounded-2xl border"
-              style="border-color: var(--border)"
-            >
-              <p
-                class="font-serif text-3xl md:text-4xl font-bold mb-1"
-                style="color: var(--accent)"
-              >
-                0
-              </p>
-              <p class="text-sm" style="color: var(--muted)">
-                Stocks to maintain
-              </p>
-            </div>
-            <div
-              class="bg-white p-5 rounded-2xl border"
-              style="border-color: var(--border)"
-            >
-              <p
-                class="font-serif text-3xl md:text-4xl font-bold mb-1"
-                style="color: var(--accent)"
-              >
-                100%
-              </p>
-              <p class="text-sm" style="color: var(--muted)">
-                Of your markup is yours
-              </p>
+            <!-- Highlights -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+              <div class="bg-white p-5 rounded-xl shadow-sm text-center">
+                <div class="text-primary text-3xl font-bold mb-2">₱0</div>
+                <p class="text-muted text-sm">Capital to Start</p>
+              </div>
+              <div class="bg-white p-5 rounded-xl shadow-sm text-center">
+                <div class="text-primary text-3xl font-bold mb-2">
+                  <i class="fas fa-gift"></i>
+                </div>
+                <p class="text-muted text-sm">Free Tester Kit</p>
+              </div>
+              <div class="bg-white p-5 rounded-xl shadow-sm text-center">
+                <div class="text-primary text-3xl font-bold mb-2">0</div>
+                <p class="text-muted text-sm">Stocks to Maintain</p>
+              </div>
+              <div class="bg-white p-5 rounded-xl shadow-sm text-center">
+                <div class="text-primary text-3xl font-bold mb-2">100%</div>
+                <p class="text-muted text-sm">Of Markup is Yours</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ========== SCENTS — NOW 8 TOTAL + AG CLOUD ========== -->
-      <section id="scents" class="py-16 md:py-20" style="background: #fff">
-        <div class="max-w-6xl mx-auto px-5">
-          <div class="text-center mb-14">
-            <p
-              class="text-xs uppercase tracking-[0.25em] mb-3"
-              style="color: var(--accent)"
-            >
-              What You Will Sell
-            </p>
-            <h2
-              class="font-serif text-3xl md:text-5xl font-bold mb-4"
-              style="color: var(--text)"
-            >
+      <!-- Scents Section -->
+      <section id="scents" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl mx-auto text-center mb-12">
+            <span class="badge inline-block mb-4">
+              <i class="fas fa-flask mr-1"></i> What You Will Sell
+            </span>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">
               Our Bestselling Scents
             </h2>
-            <p class="text-lg max-w-2xl mx-auto" style="color: var(--muted)">
+            <p class="text-muted">
               All AURA perfumes are
-              <strong>premium oil‑based, long‑lasting 6–8 hours</strong>. These
-              are the exact bestsellers you will get in your free tester kit.
+              <strong class="text-dark"
+                >premium oil‑based, long‑lasting 6–8 hours</strong
+              >. These are the exact bestsellers you will get in your free
+              tester kit.
             </p>
           </div>
 
+          <!-- Scent Category Filter -->
+          <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <button
+              class="category-filter active px-4 py-2 rounded-full bg-primary text-white text-sm font-medium transition-all"
+              data-category="all"
+            >
+              All Scents
+            </button>
+            <button
+              class="category-filter px-4 py-2 rounded-full bg-light text-dark text-sm font-medium transition-all hover:bg-primary/10"
+              data-category="feminine"
+            >
+              Feminine
+            </button>
+            <button
+              class="category-filter px-4 py-2 rounded-full bg-light text-dark text-sm font-medium transition-all hover:bg-primary/10"
+              data-category="masculine"
+            >
+              Masculine
+            </button>
+            <button
+              class="category-filter px-4 py-2 rounded-full bg-light text-dark text-sm font-medium transition-all hover:bg-primary/10"
+              data-category="unisex"
+            >
+              Unisex
+            </button>
+          </div>
+
+          <!-- Scent Cards (NO STARS, UPDATED NAMES/BEST SELLERS) -->
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 1. Lacoste Black — BEST SELLER -->
             <div
-              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
-              style="border-color: var(--border)"
+              class="scent-card card-hover bg-light rounded-xl overflow-hidden shadow-sm"
+              data-category="masculine"
             >
-              <div
-                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
-                style="background: var(--accent-soft)"
-              >
-                🖤
+              <div class="p-6">
+                <div class="flex justify-end items-start mb-4">
+                  <span class="badge best-seller">Best Seller</span>
+                </div>
+                <div class="bg-primary/15 p-3 rounded-lg w-fit mb-4">
+                  <i class="fas fa-tshirt text-primary text-xl icon-hover"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-2">Lacoste Black</h3>
+                <span class="badge inline-block mb-3"
+                  >Masculine · Fresh Spicy Woody</span
+                >
+                <p class="text-muted text-sm leading-relaxed mb-4">
+                  Bold yet refined. Opens with zesty bergamot & black pepper,
+                  dries down to smooth sandalwood, amber and warm musk.
+                  Confident, clean, masculine vibe.
+                </p>
+                <div class="flex justify-between items-center text-xs">
+                  <span><i class="fas fa-clock mr-1"></i> 7+ hrs</span>
+                  <span
+                    ><i class="fas fa-users mr-1"></i> Office, School,
+                    Gifts</span
+                  >
+                </div>
               </div>
-              <h3
-                class="font-serif text-xl font-bold mb-1"
-                style="color: var(--text)"
-              >
-                Lacoste Black
-              </h3>
-              <p
-                class="text-xs uppercase tracking-wider mb-3"
-                style="color: var(--accent)"
-              >
-                Masculine · Fresh Spicy Woody
-              </p>
-              <p
-                class="text-sm leading-relaxed mb-3"
-                style="color: var(--muted)"
-              >
-                Bold yet refined. Opens with zesty bergamot & black pepper,
-                dries down to smooth sandalwood, amber and warm musk. Confident,
-                clean, masculine vibe.
-              </p>
-              <p class="text-xs font-medium" style="color: var(--text)">
-                ✨ Best for: Office, school, gifts for him · ⏱️ 7+ hrs
-              </p>
             </div>
 
+            <!-- 2. Vanilla Lace — BEST SELLER -->
             <div
-              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
-              style="border-color: var(--border)"
+              class="scent-card card-hover bg-light rounded-xl overflow-hidden shadow-sm"
+              data-category="feminine"
             >
-              <div
-                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
-                style="background: var(--accent-soft)"
-              >
-                🤍
+              <div class="p-6">
+                <div class="flex justify-end items-start mb-4">
+                  <span class="badge best-seller">Best Seller</span>
+                </div>
+                <div class="bg-primary/15 p-3 rounded-lg w-fit mb-4">
+                  <i class="fas fa-star text-primary text-xl icon-hover"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-2">Vanilla Lace</h3>
+                <span class="badge inline-block mb-3"
+                  >Feminine · Warm Vanilla Floral</span
+                >
+                <p class="text-muted text-sm leading-relaxed mb-4">
+                  Soft, sweet & elegant. Creamy Madagascar vanilla wrapped in
+                  white florals, jasmine & soft musk. Not cloying — smells like
+                  expensive cozy luxury.
+                </p>
+                <div class="flex justify-between items-center text-xs">
+                  <span><i class="fas fa-clock mr-1"></i> 6–7 hrs</span>
+                  <span
+                    ><i class="fas fa-users mr-1"></i> Dates, Everyday,
+                    Gifts</span
+                  >
+                </div>
               </div>
-              <h3
-                class="font-serif text-xl font-bold mb-1"
-                style="color: var(--text)"
-              >
-                Vanilla Lace
-              </h3>
-              <p
-                class="text-xs uppercase tracking-wider mb-3"
-                style="color: var(--accent)"
-              >
-                Feminine · Warm Vanilla Floral
-              </p>
-              <p
-                class="text-sm leading-relaxed mb-3"
-                style="color: var(--muted)"
-              >
-                Soft, sweet & elegant. Creamy Madagascar vanilla wrapped in
-                white florals, jasmine & soft musk. Not cloying — smells like
-                expensive cozy luxury.
-              </p>
-              <p class="text-xs font-medium" style="color: var(--text)">
-                ✨ Best for: Dates, everyday, gifts for her · ⏱️ 6–7 hrs
-              </p>
             </div>
 
+            <!-- 3. Dior Sauvage — BEST SELLER -->
             <div
-              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
-              style="border-color: var(--border)"
+              class="scent-card card-hover bg-light rounded-xl overflow-hidden shadow-sm"
+              data-category="unisex"
             >
-              <div
-                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
-                style="background: var(--accent-soft)"
-              >
-                🌿
+              <div class="p-6">
+                <div class="flex justify-end items-start mb-4">
+                  <span class="badge best-seller">Best Seller</span>
+                </div>
+                <div class="bg-primary/15 p-3 rounded-lg w-fit mb-4">
+                  <i class="fas fa-fire text-primary text-xl icon-hover"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-2">Dior Sauvage</h3>
+                <span class="badge inline-block mb-3"
+                  >Unisex Iconic · Citrus Ambroxan</span
+                >
+                <p class="text-muted text-sm leading-relaxed mb-4">
+                  World‑famous crowd‑pleaser. Bright Calabrian bergamot, spicy
+                  Sichuan pepper & signature ambroxan drydown. Fresh, magnetic &
+                  incredibly long‑lasting.
+                </p>
+                <div class="flex justify-between items-center text-xs">
+                  <span><i class="fas fa-clock mr-1"></i> 8+ hrs</span>
+                  <span><i class="fas fa-users mr-1"></i> EVERY Occasion</span>
+                </div>
               </div>
-              <h3
-                class="font-serif text-xl font-bold mb-1"
-                style="color: var(--text)"
-              >
-                Dior Sauvage
-              </h3>
-              <p
-                class="text-xs uppercase tracking-wider mb-3"
-                style="color: var(--accent)"
-              >
-                Unisex Iconic · Citrus Ambroxan
-              </p>
-              <p
-                class="text-sm leading-relaxed mb-3"
-                style="color: var(--muted)"
-              >
-                World‑famous crowd‑pleaser. Bright Calabrian bergamot, spicy
-                Sichuan pepper & signature ambroxan drydown. Fresh, magnetic &
-                incredibly long‑lasting.
-              </p>
-              <p class="text-xs font-medium" style="color: var(--text)">
-                ✨ Best for: EVERY occasion · ⏱️ 8+ hrs
-              </p>
             </div>
 
+            <!-- 4. Bamboo Zen (was Fresh Bamboo) -->
             <div
-              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
-              style="border-color: var(--border)"
+              class="scent-card card-hover bg-light rounded-xl overflow-hidden shadow-sm"
+              data-category="unisex"
             >
-              <div
-                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
-                style="background: var(--accent-soft)"
-              >
-                🎋
+              <div class="p-6">
+                <div class="bg-primary/15 p-3 rounded-lg w-fit mb-4">
+                  <i class="fas fa-leaf text-primary text-xl icon-hover"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-2">Bamboo Zen</h3>
+                <span class="badge inline-block mb-3"
+                  >Unisex · Calming Green Woody</span
+                >
+                <p class="text-muted text-sm leading-relaxed mb-4">
+                  Crisp, peaceful & grounding. Green bamboo leaves, bright yuzu,
+                  soft water lily & white tea. Smells like quiet mountain air —
+                  perfect for Philippine heat.
+                </p>
+                <div class="flex justify-between items-center text-xs">
+                  <span><i class="fas fa-clock mr-1"></i> 6 hrs</span>
+                  <span
+                    ><i class="fas fa-users mr-1"></i> Hot Days, Office</span
+                  >
+                </div>
               </div>
-              <h3
-                class="font-serif text-xl font-bold mb-1"
-                style="color: var(--text)"
-              >
-                Fresh Bamboo
-              </h3>
-              <p
-                class="text-xs uppercase tracking-wider mb-3"
-                style="color: var(--accent)"
-              >
-                Unisex · Clean Green Aquatic
-              </p>
-              <p
-                class="text-sm leading-relaxed mb-3"
-                style="color: var(--muted)"
-              >
-                Crisp, cool & so fresh. Green bamboo leaves, bright yuzu, soft
-                water lily & white tea. Smells like clean mountain air — perfect
-                for Philippine heat.
-              </p>
-              <p class="text-xs font-medium" style="color: var(--text)">
-                ✨ Best for: Hot days, non‑sweet lovers · ⏱️ 6 hrs
-              </p>
             </div>
 
+            <!-- 5. Misty Peak (was Shangrila) -->
             <div
-              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
-              style="border-color: var(--border)"
+              class="scent-card card-hover bg-light rounded-xl overflow-hidden shadow-sm"
+              data-category="feminine"
             >
-              <div
-                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
-                style="background: var(--accent-soft)"
-              >
-                🏯
+              <div class="p-6">
+                <div class="bg-primary/15 p-3 rounded-lg w-fit mb-4">
+                  <i
+                    class="fas fa-mountain text-primary text-xl icon-hover"
+                  ></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-2">Misty Peak</h3>
+                <span class="badge inline-block mb-3"
+                  >Feminine Luxe · Cool Floral Alpine</span
+                >
+                <p class="text-muted text-sm leading-relaxed mb-4">
+                  Elegant, airy & fresh. Cool mountain mist, soft jasmine, dewy
+                  rose & warm sandalwood base. Smells like a crisp sunrise above
+                  the clouds.
+                </p>
+                <div class="flex justify-between items-center text-xs">
+                  <span><i class="fas fa-clock mr-1"></i> 7–8 hrs</span>
+                  <span
+                    ><i class="fas fa-users mr-1"></i> Events, Weddings,
+                    Gifts</span
+                  >
+                </div>
               </div>
-              <h3
-                class="font-serif text-xl font-bold mb-1"
-                style="color: var(--text)"
-              >
-                Shangrila
-              </h3>
-              <p
-                class="text-xs uppercase tracking-wider mb-3"
-                style="color: var(--accent)"
-              >
-                Feminine Luxe · Floral Oriental
-              </p>
-              <p
-                class="text-sm leading-relaxed mb-3"
-                style="color: var(--muted)"
-              >
-                Elegant expensive scent. Rich jasmine sambac, rose, warm
-                sandalwood & honeyed amber. Smells exactly like a 5‑star hotel
-                lobby.
-              </p>
-              <p class="text-xs font-medium" style="color: var(--text)">
-                ✨ Best for: Events, weddings, premium gifts · ⏱️ 7–8 hrs
-              </p>
             </div>
 
+            <!-- 6. Golden Hour (was Okada Premium) -->
             <div
-              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
-              style="border-color: var(--border)"
+              class="scent-card card-hover bg-light rounded-xl overflow-hidden shadow-sm"
+              data-category="unisex"
             >
-              <div
-                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
-                style="background: var(--accent-soft)"
-              >
-                ✨
+              <div class="p-6">
+                <div class="bg-primary/15 p-3 rounded-lg w-fit mb-4">
+                  <i class="fas fa-sun text-primary text-xl icon-hover"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-2">Golden Hour</h3>
+                <span class="badge inline-block mb-3"
+                  >Unisex · Warm Amber Vanilla Woods</span
+                >
+                <p class="text-muted text-sm leading-relaxed mb-4">
+                  Rich, warm & luxurious. Soft golden amber, creamy vanilla,
+                  smooth leather & warm cedar. Deep, sexy, expensive‑smelling —
+                  our most premium blend.
+                </p>
+                <div class="flex justify-between items-center text-xs">
+                  <span><i class="fas fa-clock mr-1"></i> 8+ hrs</span>
+                  <span
+                    ><i class="fas fa-users mr-1"></i> Nights, Formal,
+                    Gifts</span
+                  >
+                </div>
               </div>
-              <h3
-                class="font-serif text-xl font-bold mb-1"
-                style="color: var(--text)"
-              >
-                Okada Premium
-              </h3>
-              <p
-                class="text-xs uppercase tracking-wider mb-3"
-                style="color: var(--accent)"
-              >
-                Unisex · Smoky Oud Vanilla Leather
-              </p>
-              <p
-                class="text-sm leading-relaxed mb-3"
-                style="color: var(--muted)"
-              >
-                Rich sophisticated luxury. Soft smoky oud, creamy vanilla,
-                smooth leather & warm amber. Deep, sexy, expensive‑smelling —
-                our most premium.
-              </p>
-              <p class="text-xs font-medium" style="color: var(--text)">
-                ✨ Best for: Nights, formal, gifts · ⏱️ 8+ hrs
-              </p>
             </div>
 
+            <!-- 7. Honey Dew (was Nectarine Blossom & Honey) -->
             <div
-              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
-              style="border-color: var(--border)"
+              class="scent-card card-hover bg-light rounded-xl overflow-hidden shadow-sm"
+              data-category="feminine"
             >
-              <div
-                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
-                style="background: var(--accent-soft)"
-              >
-                🍑
+              <div class="p-6">
+                <div class="bg-primary/15 p-3 rounded-lg w-fit mb-4">
+                  <i class="fas fa-droplet text-primary text-xl icon-hover"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-2">Honey Dew</h3>
+                <span class="badge inline-block mb-3"
+                  >Feminine · Sweet Juicy Floral</span
+                >
+                <p class="text-muted text-sm leading-relaxed mb-4">
+                  Happy, juicy & bright. Ripe honeydew melon, sweet spring
+                  blossom & soft honey finish. Smells fresh, sunny & perfect for
+                  warm summer days.
+                </p>
+                <div class="flex justify-between items-center text-xs">
+                  <span><i class="fas fa-clock mr-1"></i> 6 hrs</span>
+                  <span
+                    ><i class="fas fa-users mr-1"></i> Students, Summer,
+                    Everyday</span
+                  >
+                </div>
               </div>
-              <h3
-                class="font-serif text-xl font-bold mb-1"
-                style="color: var(--text)"
-              >
-                Nectarine Blossom & Honey
-              </h3>
-              <p
-                class="text-xs uppercase tracking-wider mb-3"
-                style="color: var(--accent)"
-              >
-                Feminine · Juicy Fruity Floral
-              </p>
-              <p
-                class="text-sm leading-relaxed mb-3"
-                style="color: var(--muted)"
-              >
-                Happy & juicy. Ripe nectarine, sweet spring blossom & soft honey
-                finish. Smells fresh, sweet & sunny like a perfect summer
-                morning.
-              </p>
-              <p class="text-xs font-medium" style="color: var(--text)">
-                ✨ Best for: Students, summer, everyday · ⏱️ 6 hrs
-              </p>
             </div>
 
-            <!-- 🆕 NEW AG CLOUD ADDED HERE -->
+            <!-- 8. Velvet Sky (was AG Cloud) — BEST SELLER -->
             <div
-              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
-              style="border-color: var(--border)"
+              class="scent-card card-hover bg-light rounded-xl overflow-hidden shadow-sm"
+              data-category="unisex"
             >
-              <div
-                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
-                style="background: var(--accent-soft)"
-              >
-                ☁️
+              <div class="p-6">
+                <div class="flex justify-end items-start mb-4">
+                  <span class="badge best-seller">Best Seller</span>
+                </div>
+                <div class="bg-primary/15 p-3 rounded-lg w-fit mb-4">
+                  <i class="fas fa-cloud text-primary text-xl icon-hover"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-2">Velvet Sky</h3>
+                <span class="badge inline-block mb-3"
+                  >Unisex · Soft Powdery Musk</span
+                >
+                <p class="text-muted text-sm leading-relaxed mb-4">
+                  Soft, dreamy & cozy. Cool dusk air, crisp apple, soft lavender
+                  & clean white musk. Smells like expensive fresh linen or a
+                  5‑star hotel room.
+                </p>
+                <div class="flex justify-between items-center text-xs">
+                  <span><i class="fas fa-clock mr-1"></i> 6–7 hrs</span>
+                  <span
+                    ><i class="fas fa-users mr-1"></i> Everyday, Office,
+                    School</span
+                  >
+                </div>
               </div>
-              <h3
-                class="font-serif text-xl font-bold mb-1"
-                style="color: var(--text)"
-              >
-                AG Cloud
-              </h3>
-              <p
-                class="text-xs uppercase tracking-wider mb-3"
-                style="color: var(--accent)"
-              >
-                Unisex · Clean Powdery Aquatic
-              </p>
-              <p
-                class="text-sm leading-relaxed mb-3"
-                style="color: var(--muted)"
-              >
-                Soft, airy, fresh‑out‑of‑the‑shower clean scent. Cool sea
-                breeze, crisp apple & watery notes, drying to clean white musk,
-                cotton & light florals. Smells like expensive fresh linen or a
-                5‑star hotel room —
-                <em>the ultimate “you smell so good” scent</em>.
-              </p>
-              <p class="text-xs font-medium" style="color: var(--text)">
-                ✨ Best for: Everyday, office, school, non‑sweet lovers, hot
-                weather · ⏱️ 6–7 hrs
-              </p>
             </div>
           </div>
 
-          <p class="text-center mt-10 text-sm" style="color: var(--muted)">
-            👉
-            <strong
+          <p class="text-center mt-10 text-sm text-muted">
+            <i class="fas fa-info-circle mr-1"></i>
+            <strong class="text-dark"
               >Full scent notes sent FREE to all approved resellers.</strong
             >
           </p>
         </div>
       </section>
 
-      <section id="reseller" class="py-16 md:py-24 reseller-main">
-        <div class="max-w-6xl mx-auto px-5">
-          <div class="text-center mb-16">
-            <p
-              class="text-xs uppercase tracking-[0.25em] mb-3"
-              style="color: var(--accent)"
-            >
-              The Program
-            </p>
-            <h2
-              class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
-              style="color: var(--text)"
-            >
-              How to Become an
-              <span style="color: var(--accent)">AURA Reseller</span>
+      <!-- Reseller Program Section -->
+      <section id="reseller" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl mx-auto text-center mb-16">
+            <span class="badge inline-block mb-4">
+              <i class="fas fa-briefcase mr-1"></i> The Program
+            </span>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">
+              How to Become an <span class="text-primary">AURA Reseller</span>
             </h2>
-            <p
-              class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
-              style="color: var(--muted)"
-            >
+            <p class="text-muted">
               Four simple steps. No hidden fees. No complicated requirements.
             </p>
           </div>
 
-          <div
-            class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border mb-14"
-            style="border-color: var(--border)"
-          >
-            <h3
-              class="font-serif text-2xl md:text-3xl font-bold mb-10 text-center"
-            >
-              The 4‑Step Reseller Process
-            </h3>
-            <div class="grid md:grid-cols-2 gap-8 md:gap-10">
-              <div class="flex gap-5 items-start">
+          <!-- Steps -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-sm card-hover">
+              <div class="flex items-start space-x-4">
                 <div
-                  class="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center font-serif font-bold text-2xl"
-                  style="background: var(--accent); color: #fff"
+                  class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0"
                 >
                   1
                 </div>
                 <div>
-                  <h4 class="font-bold text-xl mb-2">Message Us to Join</h4>
-                  <p style="color: var(--muted)">
+                  <h3 class="font-bold text-xl mb-3">Message Us to Join</h3>
+                  <p class="text-muted">
                     Send “I want to be a reseller” on Facebook. We confirm and
                     onboard you immediately.
                   </p>
                 </div>
               </div>
-              <div class="flex gap-5 items-start">
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm card-hover">
+              <div class="flex items-start space-x-4">
                 <div
-                  class="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center font-serif font-bold text-2xl"
-                  style="background: var(--accent); color: #fff"
+                  class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0"
                 >
                   2
                 </div>
                 <div>
-                  <h4 class="font-bold text-xl mb-2">Get Your FREE Tester</h4>
-                  <p style="color: var(--muted)">
-                    Free tester kit of all <strong>8 scents</strong> so you can
-                    smell & showcase. <em>No payment.</em>
+                  <h3 class="font-bold text-xl mb-3">Get Your FREE Tester</h3>
+                  <p class="text-muted">
+                    Free tester kit of all
+                    <strong class="text-dark">8 scents</strong> so you can smell
+                    & showcase. <em>No payment.</em>
                   </p>
                 </div>
               </div>
-              <div class="flex gap-5 items-start">
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm card-hover">
+              <div class="flex items-start space-x-4">
                 <div
-                  class="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center font-serif font-bold text-2xl"
-                  style="background: var(--accent); color: #fff"
+                  class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0"
                 >
                   3
                 </div>
                 <div>
-                  <h4 class="font-bold text-xl mb-2">
+                  <h3 class="font-bold text-xl mb-3">
                     Sell & Send Us the Order
-                  </h4>
-                  <p style="color: var(--muted)">
+                  </h3>
+                  <p class="text-muted">
                     Sell at ANY price. Message us the order →
-                    <strong>we give you the perfume FIRST</strong> → you
-                    deliver.
+                    <strong class="text-dark"
+                      >we give you the perfume FIRST</strong
+                    >
+                    → you deliver.
                   </p>
                 </div>
               </div>
-              <div class="flex gap-5 items-start">
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm card-hover">
+              <div class="flex items-start space-x-4">
                 <div
-                  class="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center font-serif font-bold text-2xl"
-                  style="background: var(--accent); color: #fff"
+                  class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0"
                 >
                   4
                 </div>
                 <div>
-                  <h4 class="font-bold text-xl mb-2">
+                  <h3 class="font-bold text-xl mb-3">
                     Deliver & Pay Us Only Then
-                  </h4>
-                  <p style="color: var(--muted)">
+                  </h3>
+                  <p class="text-muted">
                     Collect FULL payment from customer →
-                    <strong>only THEN pay us our fixed original price</strong>.
-                    Rest = YOURS.
+                    <strong class="text-dark"
+                      >only THEN pay us our fixed original price</strong
+                    >. Rest = YOURS.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="promise-badge mt-10 p-6 rounded-2xl text-center">
-              <p class="font-bold text-lg md:text-xl mb-1">
-                🔑 REMEMBER: <u>YOU NEVER PAY US FIRST</u>
-              </p>
-              <p class="text-sm md:text-base opacity-95">
-                Get perfume → Deliver → Get paid → Pay us. Zero risk, always.
-              </p>
-            </div>
           </div>
 
-          <div
-            class="bg-white rounded-3xl p-8 md:p-10 shadow-sm border mb-14"
-            style="border-color: var(--border)"
-          >
-            <h3
-              class="font-serif text-2xl md:text-3xl font-bold mb-8 text-center"
-            >
+          <!-- Benefits -->
+          <div class="bg-white p-8 rounded-xl shadow-sm mb-16">
+            <h3 class="font-serif text-2xl font-bold mb-8 text-center">
               What You Get As A Reseller
             </h3>
-            <div class="grid md:grid-cols-2 gap-3">
-              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span style="color: var(--accent)">✓</span
-                ><span><strong>₱0 capital</strong> — no investment</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-center space-x-3 p-3 rounded-lg bg-light">
+                <i class="fas fa-check-circle text-primary flex-shrink-0"></i>
+                <span><strong>₱0 capital</strong> — no investment</span>
               </div>
-              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span style="color: var(--accent)">✓</span
-                ><span
+              <div class="flex items-center space-x-3 p-3 rounded-lg bg-light">
+                <i class="fas fa-check-circle text-primary flex-shrink-0"></i>
+                <span
                   ><strong>Free complete tester kit (8 scents)</strong></span
                 >
               </div>
-              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span style="color: var(--accent)">✓</span
-                ><span>No need to buy / hold stocks</span>
+              <div class="flex items-center space-x-3 p-3 rounded-lg bg-light">
+                <i class="fas fa-check-circle text-primary flex-shrink-0"></i>
+                <span>No need to buy / hold stocks</span>
               </div>
-              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span style="color: var(--accent)">✓</span
-                ><span><strong>You set your own selling price</strong></span>
+              <div class="flex items-center space-x-3 p-3 rounded-lg bg-light">
+                <i class="fas fa-check-circle text-primary flex-shrink-0"></i>
+                <span><strong>You set your own selling price</strong></span>
               </div>
-              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span style="color: var(--accent)">✓</span
-                ><span>Get perfume first BEFORE paying</span>
+              <div class="flex items-center space-x-3 p-3 rounded-lg bg-light">
+                <i class="fas fa-check-circle text-primary flex-shrink-0"></i>
+                <span>Get perfume first BEFORE paying</span>
               </div>
-              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span style="color: var(--accent)">✓</span
-                ><span>Pay only AFTER customer pays YOU</span>
+              <div class="flex items-center space-x-3 p-3 rounded-lg bg-light">
+                <i class="fas fa-check-circle text-primary flex-shrink-0"></i>
+                <span>Pay only AFTER customer pays YOU</span>
               </div>
-              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span style="color: var(--accent)">✓</span
-                ><span><strong>100% of markup is yours</strong></span>
+              <div class="flex items-center space-x-3 p-3 rounded-lg bg-light">
+                <i class="fas fa-check-circle text-primary flex-shrink-0"></i>
+                <span><strong>100% of markup is yours</strong></span>
               </div>
-              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span style="color: var(--accent)">✓</span
-                ><span>Premium oil‑based long‑lasting scents</span>
+              <div class="flex items-center space-x-3 p-3 rounded-lg bg-light">
+                <i class="fas fa-check-circle text-primary flex-shrink-0"></i>
+                <span>Premium oil‑based long‑lasting scents</span>
               </div>
-              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span style="color: var(--accent)">✓</span
-                ><span>Sell anytime, anywhere</span>
+              <div class="flex items-center space-x-3 p-3 rounded-lg bg-light">
+                <i class="fas fa-check-circle text-primary flex-shrink-0"></i>
+                <span>Sell anytime, anywhere</span>
               </div>
-              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span style="color: var(--accent)">✓</span
-                ><span>Free pickup/delivery within Baybay</span>
+              <div class="flex items-center space-x-3 p-3 rounded-lg bg-light">
+                <i class="fas fa-check-circle text-primary flex-shrink-0"></i>
+                <span>Free pickup/delivery within Baybay</span>
               </div>
             </div>
           </div>
 
+          <!-- CTA -->
           <div class="text-center max-w-3xl mx-auto">
-            <h3 class="font-serif text-3xl md:text-5xl font-bold mb-5">
+            <h3 class="font-serif text-2xl md:text-3xl font-bold mb-6">
               Ready to start earning?
             </h3>
-            <a
-              href="https://www.facebook.com/messages/t/"
-              target="_blank"
-              class="btn-primary px-12 py-5 rounded-full font-bold text-lg shadow-2xl"
-              >💬 Message Us — Become a Reseller Today</a
-            >
+            <a href="#contact" class="btn-primary">
+              <i class="fas fa-comment mr-2"></i> Message Us — Become a Reseller
+              Today
+            </a>
           </div>
         </div>
       </section>
 
-      <!-- ========== FAQ — UPDATED TO 8 SCENTS ========== -->
-      <section id="faq" class="py-16 md:py-20" style="background: #fff">
-        <div class="max-w-3xl mx-auto px-5">
-          <div class="text-center mb-12">
-            <p
-              class="text-xs uppercase tracking-[0.25em] mb-3"
-              style="color: var(--accent)"
-            >
-              Frequently Asked
-            </p>
-            <h2 class="font-serif text-3xl md:text-5xl font-bold mb-4">
+      <!-- FAQ Section -->
+      <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl mx-auto text-center mb-12">
+            <span class="badge inline-block mb-4">
+              <i class="fas fa-question-circle mr-1"></i> Frequently Asked
+            </span>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">
               Questions? We Answer
             </h2>
           </div>
-          <div class="space-y-3">
-            <div
-              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
-              style="border-color: var(--border)"
-            >
-              <div
-                class="faq-q p-5 flex justify-between"
-                onclick="toggleFaq(this)"
+
+          <div class="space-y-4">
+            <div class="faq-item bg-light rounded-xl overflow-hidden">
+              <button
+                class="faq-question w-full text-left px-6 py-4 font-medium flex justify-between items-center gap-4"
               >
-                <strong>❓ Do I really need zero capital to start?</strong
-                ><span
-                  class="faq-icon text-2xl font-bold"
-                  style="color: var(--accent)"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a px-5" style="color: var(--muted)">
-                <div class="pb-5">
-                  Yes, 100%. No fees, no registration, no payment of any kind.
-                </div>
+                <span>Do I really need zero capital to start?</span>
+                <i class="fas fa-chevron-down text-primary flex-shrink-0"></i>
+              </button>
+              <div
+                class="faq-answer px-6 py-4 text-muted border-t border-gray-200 hidden"
+              >
+                Yes, 100%. No fees, no registration, no payment of any kind.
               </div>
             </div>
-            <div
-              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
-              style="border-color: var(--border)"
-            >
-              <div
-                class="faq-q p-5 flex justify-between"
-                onclick="toggleFaq(this)"
+
+            <div class="faq-item bg-light rounded-xl overflow-hidden">
+              <button
+                class="faq-question w-full text-left px-6 py-4 font-medium flex justify-between items-center gap-4"
               >
-                <strong>❓ When do I get my free tester?</strong
-                ><span
-                  class="faq-icon text-2xl font-bold"
-                  style="color: var(--accent)"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a px-5" style="color: var(--muted)">
-                <div class="pb-5">
-                  Right after you message us to confirm your join. We give it
-                  same‑day in Baybay.
-                </div>
+                <span>When do I get my free tester?</span>
+                <i class="fas fa-chevron-down text-primary flex-shrink-0"></i>
+              </button>
+              <div
+                class="faq-answer px-6 py-4 text-muted border-t border-gray-200 hidden"
+              >
+                Right after you message us to confirm your join. We give it
+                same‑day in Baybay.
               </div>
             </div>
-            <div
-              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
-              style="border-color: var(--border)"
-            >
-              <div
-                class="faq-q p-5 flex justify-between"
-                onclick="toggleFaq(this)"
+
+            <div class="faq-item bg-light rounded-xl overflow-hidden">
+              <button
+                class="faq-question w-full text-left px-6 py-4 font-medium flex justify-between items-center gap-4"
               >
-                <strong>❓ How much is your original price per bottle?</strong
-                ><span
-                  class="faq-icon text-2xl font-bold"
-                  style="color: var(--accent)"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a px-5" style="color: var(--muted)">
-                <div class="pb-5">
-                  Message us and we will send the full confidential price list
-                  (resellers only).
-                </div>
+                <span>How much is your original price per bottle?</span>
+                <i class="fas fa-chevron-down text-primary flex-shrink-0"></i>
+              </button>
+              <div
+                class="faq-answer px-6 py-4 text-muted border-t border-gray-200 hidden"
+              >
+                Message us and we will send the full confidential price list
+                (resellers only).
               </div>
             </div>
-            <div
-              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
-              style="border-color: var(--border)"
-            >
-              <div
-                class="faq-q p-5 flex justify-between"
-                onclick="toggleFaq(this)"
+
+            <div class="faq-item bg-light rounded-xl overflow-hidden">
+              <button
+                class="faq-question w-full text-left px-6 py-4 font-medium flex justify-between items-center gap-4"
               >
-                <strong>❓ Can I sell outside Baybay?</strong
-                ><span
-                  class="faq-icon text-2xl font-bold"
-                  style="color: var(--accent)"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a px-5" style="color: var(--muted)">
-                <div class="pb-5">
-                  Yes! We can arrange delivery to Ormoc / Palompon / etc. for
-                  small fee.
-                </div>
+                <span>Can I sell outside Baybay?</span>
+                <i class="fas fa-chevron-down text-primary flex-shrink-0"></i>
+              </button>
+              <div
+                class="faq-answer px-6 py-4 text-muted border-t border-gray-200 hidden"
+              >
+                Yes! We can arrange delivery to Ormoc / Palompon / etc. for
+                small fee.
               </div>
             </div>
-            <!-- ✅ COUNT = 8 NOW -->
-            <div
-              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
-              style="border-color: var(--border)"
-            >
-              <div
-                class="faq-q p-5 flex justify-between"
-                onclick="toggleFaq(this)"
+
+            <div class="faq-item bg-light rounded-xl overflow-hidden">
+              <button
+                class="faq-question w-full text-left px-6 py-4 font-medium flex justify-between items-center gap-4"
               >
-                <strong>❓ How many scents do you have?</strong
-                ><span
-                  class="faq-icon text-2xl font-bold"
-                  style="color: var(--accent)"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a px-5" style="color: var(--muted)">
-                <div class="pb-5">
-                  <strong>8 scents</strong>, all long‑lasting oil‑based. We add
-                  new limited scents regularly.
-                </div>
+                <span>How many scents do you have?</span>
+                <i class="fas fa-chevron-down text-primary flex-shrink-0"></i>
+              </button>
+              <div
+                class="faq-answer px-6 py-4 text-muted border-t border-gray-200 hidden"
+              >
+                <strong>8 scents</strong>, all long‑lasting oil‑based. We add
+                new limited scents regularly.
               </div>
             </div>
-            <div
-              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
-              style="border-color: var(--border)"
-            >
-              <div
-                class="faq-q p-5 flex justify-between"
-                onclick="toggleFaq(this)"
+
+            <div class="faq-item bg-light rounded-xl overflow-hidden">
+              <button
+                class="faq-question w-full text-left px-6 py-4 font-medium flex justify-between items-center gap-4"
               >
-                <strong>❓ When do I pay you?</strong
-                ><span
-                  class="faq-icon text-2xl font-bold"
-                  style="color: var(--accent)"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a px-5" style="color: var(--muted)">
-                <div class="pb-5">
-                  Only after you have received full payment from your customer.
-                </div>
+                <span>When do I pay you?</span>
+                <i class="fas fa-chevron-down text-primary flex-shrink-0"></i>
+              </button>
+              <div
+                class="faq-answer px-6 py-4 text-muted border-t border-gray-200 hidden"
+              >
+                Only after you have received full payment from your customer.
               </div>
             </div>
-            <div
-              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
-              style="border-color: var(--border)"
-            >
-              <div
-                class="faq-q p-5 flex justify-between"
-                onclick="toggleFaq(this)"
+
+            <div class="faq-item bg-light rounded-xl overflow-hidden">
+              <button
+                class="faq-question w-full text-left px-6 py-4 font-medium flex justify-between items-center gap-4"
               >
-                <strong>❓ Is there a sales quota?</strong
-                ><span
-                  class="faq-icon text-2xl font-bold"
-                  style="color: var(--accent)"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a px-5" style="color: var(--muted)">
-                <div class="pb-5">
-                  None! Sell 1 bottle or 100 — totally up to you.
-                </div>
+                <span>Is there a sales quota?</span>
+                <i class="fas fa-chevron-down text-primary flex-shrink-0"></i>
+              </button>
+              <div
+                class="faq-answer px-6 py-4 text-muted border-t border-gray-200 hidden"
+              >
+                None! Sell 1 bottle or 100 — totally up to you.
               </div>
             </div>
-            <div
-              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
-              style="border-color: var(--border)"
-            >
-              <div
-                class="faq-q p-5 flex justify-between"
-                onclick="toggleFaq(this)"
+
+            <div class="faq-item bg-light rounded-xl overflow-hidden">
+              <button
+                class="faq-question w-full text-left px-6 py-4 font-medium flex justify-between items-center gap-4"
               >
-                <strong
-                  >❓ Can I be a reseller even if I'm a
-                  student/housewife?</strong
-                ><span
-                  class="faq-icon text-2xl font-bold"
-                  style="color: var(--accent)"
-                  >+</span
+                <span
+                  >Can I be a reseller even if I'm a student/housewife?</span
                 >
-              </div>
-              <div class="faq-a px-5" style="color: var(--muted)">
-                <div class="pb-5">
-                  YES! 90% of our resellers are students & stay‑at‑home moms
-                  from Baybay.
-                </div>
+                <i class="fas fa-chevron-down text-primary flex-shrink-0"></i>
+              </button>
+              <div
+                class="faq-answer px-6 py-4 text-muted border-t border-gray-200 hidden"
+              >
+                YES! 90% of our resellers are students & stay‑at‑home moms from
+                Baybay.
               </div>
             </div>
-            <div
-              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
-              style="border-color: var(--border)"
-            >
-              <div
-                class="faq-q p-5 flex justify-between"
-                onclick="toggleFaq(this)"
+
+            <div class="faq-item bg-light rounded-xl overflow-hidden">
+              <button
+                class="faq-question w-full text-left px-6 py-4 font-medium flex justify-between items-center gap-4"
               >
-                <strong
-                  >❓ How do I get the perfume when I have an order?</strong
-                ><span
-                  class="faq-icon text-2xl font-bold"
-                  style="color: var(--accent)"
-                  >+</span
-                >
-              </div>
-              <div class="faq-a px-5" style="color: var(--muted)">
-                <div class="pb-5">
-                  Message us the order → we prepare → you pick up / we deliver
-                  to you in Baybay → you deliver to customer.
-                </div>
+                <span>How do I get the perfume when I have an order?</span>
+                <i class="fas fa-chevron-down text-primary flex-shrink-0"></i>
+              </button>
+              <div
+                class="faq-answer px-6 py-4 text-muted border-t border-gray-200 hidden"
+              >
+                Message us the order → we prepare → you pick up / we deliver to
+                you in Baybay → you deliver to customer.
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="portal" class="py-16 md:py-20">
-        <div class="max-w-4xl mx-auto px-5">
-          <div class="text-center mb-10">
-            <p
-              class="text-xs uppercase tracking-[0.25em] mb-3"
-              style="color: var(--accent)"
-            >
-              For Active Resellers Only
-            </p>
+      <!-- Reseller Portal Section (UPDATED SCENT NAMES) -->
+      <section id="portal" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center mb-10">
+            <span class="badge inline-block mb-4">
+              <i class="fas fa-lock mr-1"></i> For Active Resellers Only
+            </span>
             <h2 class="font-serif text-3xl md:text-4xl font-bold mb-3">
               🔐 Reseller Portal
             </h2>
           </div>
+
           <div
             id="portal-login"
-            class="bg-white p-8 rounded-3xl border max-w-md mx-auto"
-            style="border-color: var(--border)"
+            class="bg-white p-8 rounded-xl shadow-sm max-w-md mx-auto"
           >
-            <input
-              type="password"
-              id="portal-pw"
-              class="w-full border px-3 py-2.5 rounded-lg mb-2"
-              placeholder="Enter reseller password"
-              onkeypress="if (event.key === 'Enter') openPortal();"
-            />
-            <p id="portal-error" class="hidden text-sm text-red-500 mb-2">
-              ❌ Wrong password
-            </p>
-            <button
-              onclick="openPortal()"
-              class="btn-primary w-full py-3 rounded-xl font-medium"
-            >
-              Enter Portal
-            </button>
-          </div>
-          <div
-            id="portal-content"
-            class="hidden bg-white rounded-3xl border overflow-hidden"
-            style="border-color: var(--border)"
-          >
-            <div
-              class="p-6 flex flex-wrap justify-between border-b"
-              style="
-                border-color: var(--border);
-                background: var(--accent-soft);
+            <h3 class="font-bold text-xl mb-6">Welcome Back, Reseller!</h3>
+            <form
+              id="portal-form"
+              onsubmit="
+                event.preventDefault();
+                openPortal();
               "
             >
-              <h3 class="font-serif text-2xl font-bold">
+              <div class="mb-4">
+                <label for="portal-pw" class="block text-sm font-medium mb-2"
+                  >Reseller Password</label
+                >
+                <input
+                  type="password"
+                  id="portal-pw"
+                  class="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+              <p id="portal-error" class="text-sm text-red-500 mb-4 hidden">
+                ❌ Wrong password. Please try again.
+              </p>
+              <button type="submit" class="btn-primary w-full">
+                <i class="fas fa-key mr-2"></i> Enter Portal
+              </button>
+            </form>
+          </div>
+
+          <div
+            id="portal-content"
+            class="hidden bg-white rounded-xl shadow-sm overflow-hidden max-w-4xl mx-auto"
+          >
+            <div
+              class="p-6 bg-primary/10 border-b border-gray-200 flex justify-between items-center"
+            >
+              <h3 class="font-serif text-xl font-bold">
                 👋 Welcome AURA Reseller!
               </h3>
               <button
                 onclick="closePortal()"
-                class="btn-outline px-5 py-2 rounded-lg text-sm"
+                class="text-muted hover:text-primary transition-colors duration-200 text-sm"
               >
-                Logout
+                <i class="fas fa-sign-out-alt mr-1"></i> Logout
               </button>
             </div>
-            <div class="p-6 md:p-8 grid md:grid-cols-2 gap-6">
-              <div
-                class="p-5 rounded-2xl border"
-                style="border-color: var(--border); background: var(--bg)"
-              >
-                <h4 class="font-bold text-lg mb-3">
-                  💰 Confidential Original Price List
-                </h4>
-                <ul class="text-sm space-y-1.5">
-                  <li>• Lacoste Black — <strong>₱159</strong></li>
-                  <li>• Vanilla Lace — <strong>₱152</strong></li>
-                  <li>• Dior Sauvage — <strong>₱163</strong></li>
-                  <li>• Bamboo Zen — <strong>₱155</strong></li>
-                  <li>• Misty Peak — <strong>₱154</strong></li>
-                  <li>• Golden Hour — <strong>₱155</strong></li>
-                  <li>• Honey Dew — <strong>₱154</strong></li>
-                  <li>• Velvet Sky — <strong>₱157</strong></li>
-                </ul>
-              </div>
-              <div
-                class="p-5 rounded-2xl border"
-                style="border-color: var(--border); background: var(--bg)"
-              >
-                <h4 class="font-bold text-lg mb-3">📦 Live Stock Update</h4>
-                <ul class="text-sm space-y-1.5">
-                  <li>✅ All 8 scents available</li>
-                  <li>⚠️ Low stock: —</li>
-                  <li>❌ Out of stock: —</li>
-                </ul>
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-light p-5 rounded-xl">
+                  <h4 class="font-bold text-lg mb-4">
+                    💰 Confidential Original Price List
+                  </h4>
+                  <ul class="space-y-2 text-sm">
+                    <li>• Lacoste Black — <strong>₱159</strong></li>
+                    <li>• Vanilla Lace — <strong>₱152</strong></li>
+                    <li>• Dior Sauvage — <strong>₱163</strong></li>
+                    <li>• Bamboo Zen — <strong>₱155</strong></li>
+                    <li>• Misty Peak — <strong>₱154</strong></li>
+                    <li>• Golden Hour — <strong>₱155</strong></li>
+                    <li>• Honey Dew — <strong>₱154</strong></li>
+                    <li>• Velvet Sky — <strong>₱157</strong></li>
+                  </ul>
+                </div>
+                <div class="bg-light p-5 rounded-xl">
+                  <h4 class="font-bold text-lg mb-4">📦 Live Stock Update</h4>
+                  <ul class="space-y-2 text-sm">
+                    <li>
+                      <i class="fas fa-check-circle text-green-500 mr-1"></i>
+                      All 8 scents available
+                    </li>
+                    <li>
+                      <i
+                        class="fas fa-exclamation-triangle text-yellow-500 mr-1"
+                      ></i>
+                      Low stock:
+                    </li>
+                    <li>
+                      <i class="fas fa-times-circle text-red-500 mr-1"></i> Out
+                      of stock:
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="py-16 md:py-20" style="background: #fff">
-        <div class="max-w-4xl mx-auto px-5 text-center">
-          <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">
-            Questions? Message Us
-          </h2>
-          <a
-            href="https://www.facebook.com/messages/t/"
-            target="_blank"
-            class="btn-outline px-10 py-4.5 rounded-full font-semibold text-lg inline-flex items-center gap-3"
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.437 5.503 3.682 7.2V22l3.405-1.868c.95.262 1.953.404 2.913.404 5.523 0 10-4.145 10-9.243S17.523 2 12 2z"
-              />
-            </svg>
-            Message AURA Parfums on Facebook
-          </a>
-          <p class="mt-8 font-medium">
-            📍 Baybay Based · 🚚 Free within Baybay
-          </p>
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <span class="badge inline-block mb-4">
+              <i class="fas fa-phone mr-1"></i> Get In Touch
+            </span>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">
+              Questions? Message Us
+            </h2>
+            <p class="text-muted mb-8">
+              Interested to join? Need more details? We're just one message
+              away.
+            </p>
+            <a
+              href="https://www.facebook.com/melisa.loreto.2025"
+              target="_blank"
+              rel="noopener"
+              class="btn-primary"
+            >
+              <i class="fab fa-facebook-messenger mr-2"></i> Message AURA
+              Parfums on Facebook
+            </a>
+            <div class="mt-12 pt-8 border-t border-gray-200">
+              <p class="font-medium">
+                📍 Based in Baybay | 🚚 Free pickup / delivery within Baybay for
+                resellers
+              </p>
+            </div>
+          </div>
         </div>
       </section>
+    </main>
 
-      <footer class="py-10 border-t" style="border-color: var(--border)">
-        <div class="text-center">
-          <p class="font-serif text-2xl font-bold">AURA Parfums</p>
-          <p class="text-xs mt-2" style="color: var(--muted)">
-            © 2026 · Premium Scents · Zero Capital Reseller Program
-          </p>
+    <!-- Footer -->
+    <footer class="py-10 bg-dark text-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0 text-center md:text-left">
+            <div
+              class="flex items-center justify-center md:justify-start space-x-2"
+            >
+              <i class="fas fa-perfume text-primary text-2xl"></i>
+              <span class="font-serif text-xl font-bold"
+                >AURA <span class="text-primary">Parfums</span></span
+              >
+            </div>
+            <p class="text-gray-400 text-sm mt-2">
+              Premium Scents · Zero Capital Reseller Program
+            </p>
+          </div>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="bg-white/10 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="#"
+              class="bg-white/10 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              class="bg-white/10 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+              aria-label="TikTok"
+            >
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
         </div>
-      </footer>
+        <div
+          class="mt-8 pt-8 border-t border-white/10 text-center text-gray-400 text-sm"
+        >
+          © 2026 AURA Parfums. All rights reserved.
+        </div>
+      </div>
+    </footer>
 
-      <a
-        href="https://www.facebook.com/messages/t/"
-        target="_blank"
-        class="sticky-cta"
-        >💬 Message Us — Become a Reseller</a
-      >
-      <a
-        href="https://www.facebook.com/messages/t/"
-        target="_blank"
-        class="float-messenger"
-        ><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff">
-          <path
-            d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.437 5.503 3.682 7.2V22l3.405-1.868c.95.262 1.953.404 2.913.404 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.5 14.5l-2.5-2.7-4.8 2.6 5.2-5.6 2.6 2.7 4.7-2.6-5.2 5.6z"
-          /></svg
-      ></a>
-    </div>
+    <!-- Floating Buttons -->
+    <a
+      href="https://www.facebook.com/messages/t/"
+      target="_blank"
+      rel="noopener"
+      class="sticky-cta fixed bottom-0 left-0 right-0 bg-primary text-white text-center py-4 font-medium shadow-lg z-40 hover:bg-primary/95 transition"
+    >
+      <i class="fas fa-comment mr-2"></i> Message Us — Become a Reseller
+    </a>
+
+    <a
+      href="https://www.facebook.com/messages/t/"
+      target="_blank"
+      rel="noopener"
+      class="float-messenger fixed right-6 bottom-24 bg-primary text-white p-3 rounded-full shadow-lg z-50 hover:bg-primary/90 transition-all duration-300 hover:scale-105"
+      aria-label="Chat on Messenger"
+    >
+      <i class="fab fa-facebook-messenger text-xl"></i>
+    </a>
+
+    <a
+      href="#home"
+      class="back-to-top"
+      id="back-to-top"
+      aria-label="Back to top"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
     <script>
-      const FACEBOOK_URL = "https://www.facebook.com/melisa.loreto.2025";
-      const DEFAULT_PORTAL_PASSWORD = "aurareseller2026";
-      document.addEventListener("DOMContentLoaded", () => {
+      // === CONFIG — UPDATE THESE! ===
+      const FACEBOOK_URL = "https://www.facebook.com/melisa.loreto.2025"; // ← Replace with your actual Messenger link
+      const DEFAULT_PORTAL_PASSWORD = "aurareseller2026"; // ← Change this to your secret password
+
+      // === DOM ELEMENTS ===
+      const navbar = document.getElementById("navbar");
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+      const backToTop = document.getElementById("back-to-top");
+      const faqQuestions = document.querySelectorAll(".faq-question");
+      const categoryFilters = document.querySelectorAll(".category-filter");
+      const scentCards = document.querySelectorAll(".scent-card");
+
+      // === HELPER: UPDATE ALL FB LINKS ===
+      function updateFacebookLinks() {
         document
           .querySelectorAll('a[href*="facebook.com/messages"]')
-          .forEach((a) => (a.href = FACEBOOK_URL));
-      });
-      function toggleMenu() {
-        document.getElementById("mobile-menu").classList.toggle("hidden");
+          .forEach((a) => {
+            a.href = FACEBOOK_URL;
+          });
       }
-      function toggleFaq(e) {
-        const p = e.parentElement;
-        const o = p.classList.contains("open");
-        document
-          .querySelectorAll(".faq-item")
-          .forEach((i) => i.classList.remove("open"));
-        if (!o) p.classList.add("open");
+
+      // === HELPER: CLOSE MOBILE MENU ===
+      function closeMobileMenu() {
+        mobileMenu.classList.add("invisible", "opacity-0", "-translate-y-full");
+        const icon = menuToggle.querySelector("i");
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
       }
+
+      // === FAQ TOGGLE ===
+      function initFaq() {
+        faqQuestions.forEach((question) => {
+          question.addEventListener("click", () => {
+            const answer = question.nextElementSibling;
+            const icon = question.querySelector("i");
+            const isOpen = !answer.classList.contains("hidden");
+
+            // Close all first
+            faqQuestions.forEach((q) => {
+              q.nextElementSibling.classList.add("hidden");
+              q.querySelector("i").classList.remove("rotate-180");
+            });
+
+            // Toggle current
+            if (!isOpen) {
+              answer.classList.remove("hidden");
+              icon.classList.add("rotate-180");
+            }
+          });
+        });
+      }
+
+      // === SCENT CATEGORY FILTER ===
+      function initCategoryFilter() {
+        categoryFilters.forEach((filter) => {
+          filter.addEventListener("click", () => {
+            const category = filter.getAttribute("data-category");
+
+            // Update active state
+            categoryFilters.forEach((f) => {
+              f.classList.remove("active", "bg-primary", "text-white");
+              f.classList.add("bg-light", "text-dark");
+            });
+            filter.classList.add("active", "bg-primary", "text-white");
+            filter.classList.remove("bg-light", "text-dark");
+
+            // Show/hide cards
+            scentCards.forEach((card) => {
+              const match =
+                category === "all" || card.dataset.category === category;
+              card.style.display = match ? "block" : "none";
+            });
+          });
+        });
+      }
+
+      // === MOBILE MENU ===
+      function initMobileMenu() {
+        menuToggle.addEventListener("click", () => {
+          const isClosed = mobileMenu.classList.contains("invisible");
+          const icon = menuToggle.querySelector("i");
+
+          if (isClosed) {
+            mobileMenu.classList.remove(
+              "invisible",
+              "opacity-0",
+              "-translate-y-full",
+            );
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            closeMobileMenu();
+          }
+        });
+
+        // Auto-close when link is tapped
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", closeMobileMenu);
+        });
+      }
+
+      // === SCROLL HANDLER ===
+      function handleScroll() {
+        const y = window.scrollY;
+
+        // Navbar background
+        if (y > 50) {
+          navbar.classList.add("bg-white", "shadow-md");
+          navbar.classList.remove("bg-transparent");
+        } else {
+          navbar.classList.remove("bg-white", "shadow-md");
+          navbar.classList.add("bg-transparent");
+        }
+
+        // Back to top
+        if (y > 300) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
+        }
+      }
+
+      // === RESELLER PORTAL ===
       function openPortal() {
-        if (
-          document.getElementById("portal-pw").value === DEFAULT_PORTAL_PASSWORD
-        ) {
-          document.getElementById("portal-login").classList.add("hidden");
-          document.getElementById("portal-content").classList.remove("hidden");
-        } else
-          document.getElementById("portal-error").classList.remove("hidden");
+        const input = document.getElementById("portal-pw");
+        const error = document.getElementById("portal-error");
+        const password = input.value.trim();
+
+        if (password === DEFAULT_PORTAL_PASSWORD) {
+          document.getElementById("portal-login").style.display = "none";
+          document.getElementById("portal-content").style.display = "block";
+          error.classList.add("hidden");
+          input.value = "";
+        } else {
+          error.classList.remove("hidden");
+          input.focus();
+        }
       }
+
       function closePortal() {
-        document.getElementById("portal-content").classList.add("hidden");
-        document.getElementById("portal-login").classList.remove("hidden");
-        document.getElementById("portal-pw").value = "";
+        document.getElementById("portal-content").style.display = "none";
+        document.getElementById("portal-login").style.display = "block";
+        const input = document.getElementById("portal-pw");
+        input.value = "";
+        input.focus();
       }
+
+      // === INIT EVERYTHING ===
+      document.addEventListener("DOMContentLoaded", () => {
+        updateFacebookLinks();
+        initFaq();
+        initCategoryFilter();
+        initMobileMenu();
+        handleScroll(); // Run once on load for mid-page refreshes
+        window.addEventListener("scroll", handleScroll);
+      });
     </script>
   </body>
 </html>
