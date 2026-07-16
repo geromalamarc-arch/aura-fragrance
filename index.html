@@ -1,13 +1,54 @@
 <html style="margin: 0; padding: 0">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    (function () {
-      var s = document.createElement("style");
-      s.textContent = `
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURA Parfums | Reseller Program — Zero Capital · Baybay Based</title>
+    <meta
+      name="description"
+      content="Become an AURA Parfums reseller. Zero capital, free tester, you set your price, you pay us ONLY after your customer pays you. Earn extra income today. Baybay based."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://geromalamarc-arch.github.io/aura-fragrance/"
+    />
+    <meta
+      property="og:title"
+      content="AURA Parfums Reseller Program | Zero Capital · Baybay"
+    />
+    <meta
+      property="og:description"
+      content="FREE tester · No stocks needed · You never pay us first. Earn ₱100–₱200 per bottle selling premium long‑lasting perfumes. Baybay City based."
+    />
+    <meta
+      property="og:image"
+      content="https://p-dola-image-sign-sgnontt.byteintl.net/tos-mya-i-uo7y4d541q/6b0284bce5144846914e8bdeccfe063c.jpg~tplv-0es2k971ck-24-95-exif:1200:630.image"
+    />
+    <meta property="og:site_name" content="AURA Parfums" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="AURA Parfums Reseller Program | Zero Capital"
+    />
+    <meta
+      name="twitter:description"
+      content="Free tester · No risk · You keep 100% of your markup. Baybay based."
+    />
+    <meta
+      name="twitter:image"
+      content="https://p-dola-image-sign-sgnontt.byteintl.net/tos-mya-i-uo7y4d541q/6b0284bce5144846914e8bdeccfe063c.jpg~tplv-0es2k971ck-24-95-exif:1200:630.image"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      (function () {
+        var s = document.createElement("style");
+        s.textContent = `
     :root{
       --bg:#fdfaf7;
       --card:#ffffff;
@@ -19,7 +60,8 @@
       --border:rgba(42,31,26,.08);
     }
     *{box-sizing:border-box}
-    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);margin:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);margin:0;padding-bottom:90px}
     .font-serif{font-family:'Playfair Display',serif}
     .fade-in{animation:fade .6s ease}
     @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
@@ -37,13 +79,26 @@
     .benefit-item:hover{background:var(--accent-soft);transform:translateX(4px)}
     .reseller-main{background:linear-gradient(135deg,#fff9f2 0%,#fff5f5 50%,#faf5ff 100%)}
     .highlight-box{border-left:4px solid var(--accent)}
+    .scent-card{transition:all .3s ease}
+    .scent-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(42,31,26,.08)}
+    .faq-q{cursor:pointer;transition:all .2s ease}
+    .faq-q:hover{background:var(--accent-soft)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .faq-item.open .faq-a{max-height:300px}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-icon{transition:transform .25s ease}
+    .promise-badge{background:linear-gradient(135deg,#c9a37a,#b89269);color:#fff;box-shadow:0 10px 25px rgba(201,163,122,.35)}
+    .float-messenger{position:fixed;right:18px;bottom:100px;z-index:60;width:60px;height:60px;border-radius:50%;background:#0084ff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,132,255,.4);transition:all .25s ease}
+    .float-messenger:hover{transform:scale(1.08);box-shadow:0 12px 30px rgba(0,132,255,.5)}
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:14px 18px;background:var(--accent);color:#fff;text-align:center;font-weight:600;box-shadow:0 -6px 20px rgba(0,0,0,.12)}
+    @media(min-width:768px){.sticky-cta{display:none}.float-messenger{bottom:28px}}
   `;
-      document.head.appendChild(s);
-    })();
-  </script>
-  <div style="background-color: transparent; box-sizing: border-box">
+        document.head.appendChild(s);
+      })();
+    </script>
+  </head>
+  <body>
     <div>
-      <!-- TOP BANNER -->
       <div
         class="banner-gradient text-center py-3 px-4 text-sm font-semibold"
         style="color: var(--text)"
@@ -52,7 +107,30 @@
         YOUR MARKUP ✨
       </div>
 
-      <!-- NAVIGATION -->
+      <div
+        class="text-center py-4 px-5 border-b"
+        style="background: #fff8ee; border-color: var(--border)"
+      >
+        <p
+          class="font-semibold text-base md:text-lg mb-1"
+          style="color: var(--text)"
+        >
+          👋 Hi! You scanned the QR on an <strong>AURA perfume bottle</strong>!
+        </p>
+        <p
+          class="text-sm md:text-base max-w-3xl mx-auto"
+          style="color: var(--muted)"
+        >
+          This website is for people who want to
+          <strong style="color: var(--accent)"
+            >EARN EXTRA INCOME selling AURA Parfums</strong
+          >. We do <strong>not</strong> sell directly to customers here — all
+          orders go through our authorized resellers.
+          <br class="hidden md:block" />Keep scrolling to learn how you can
+          start with <strong>₱0 capital, free tester, and zero risk</strong>.
+        </p>
+      </div>
+
       <nav
         class="sticky top-0 z-40 backdrop-blur-md"
         style="
@@ -67,19 +145,17 @@
             href="#home"
             class="font-serif text-2xl md:text-3xl font-bold tracking-wide"
             style="color: var(--text)"
+            >AURA <span style="color: var(--accent)">Parfums</span></a
           >
-            AURA <span style="color: var(--accent)">Parfums</span>
-          </a>
           <div class="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#home" class="nav-link active">Home</a>
+            <a href="#scents" class="nav-link">Our Scents</a>
             <a href="#reseller" class="nav-link">Reseller Program</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+            <a href="#portal" class="nav-link">Reseller Portal</a>
             <a href="#contact" class="nav-link">Contact</a>
           </div>
-          <button
-            onclick="toggleMenu()"
-            class="md:hidden p-2"
-            style="color: var(--text)"
-          >
+          <button onclick="toggleMenu()" class="md:hidden p-2">
             <svg
               width="24"
               height="24"
@@ -100,8 +176,15 @@
           style="border-color: var(--border)"
         >
           <a href="#home" onclick="toggleMenu()" class="block py-2">Home</a>
+          <a href="#scents" onclick="toggleMenu()" class="block py-2"
+            >Our Scents</a
+          >
           <a href="#reseller" onclick="toggleMenu()" class="block py-2"
             >Reseller Program</a
+          >
+          <a href="#faq" onclick="toggleMenu()" class="block py-2">FAQ</a>
+          <a href="#portal" onclick="toggleMenu()" class="block py-2"
+            >Reseller Portal</a
           >
           <a href="#contact" onclick="toggleMenu()" class="block py-2"
             >Contact</a
@@ -109,9 +192,8 @@
         </div>
       </nav>
 
-      <!-- ==================== HERO / HOME ==================== -->
       <section id="home" class="fade-in">
-        <div class="max-w-4xl mx-auto px-5 py-20 md:py-28 text-center">
+        <div class="max-w-4xl mx-auto px-5 py-16 md:py-24 text-center">
           <p
             class="text-xs md:text-sm uppercase tracking-[0.25em] mb-5"
             style="color: var(--accent)"
@@ -154,20 +236,32 @@
           <div class="flex flex-wrap gap-4 justify-center">
             <a
               href="#reseller"
-              class="btn-primary px-10 py-4.5 rounded-full font-semibold text-lg text-center"
+              class="btn-primary px-10 py-4.5 rounded-full font-semibold text-lg"
+              >✨ Learn How to Become a Reseller</a
             >
-              ✨ Learn How to Become a Reseller
-            </a>
             <a
               href="#contact"
-              class="btn-outline px-10 py-4.5 rounded-full font-semibold text-lg text-center"
+              class="btn-outline px-10 py-4.5 rounded-full font-semibold text-lg"
+              >💬 Message Us to Join Now</a
             >
-              💬 Message Us to Join Now
-            </a>
           </div>
 
-          <!-- QUICK HIGHLIGHTS -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-20">
+          <div
+            class="promise-badge mt-12 inline-block text-left md:text-center px-7 py-5 rounded-2xl max-w-2xl"
+          >
+            <p class="font-bold text-lg md:text-xl mb-1">
+              ⚠️ OUR #1 PROMISE TO YOU: <u>YOU WILL NEVER PAY US FIRST</u>
+            </p>
+            <p class="text-sm md:text-base opacity-95">
+              ✅ We give you the perfume → ✅ You deliver to your customer → ✅
+              You collect full payment → ✅ <strong>Only then</strong> you pay
+              us our original price.<br /><strong
+                >🚫 Zero risk · 🚫 No hidden fees · 🚫 No excuses.</strong
+              >
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-16">
             <div
               class="bg-white p-5 rounded-2xl border"
               style="border-color: var(--border)"
@@ -228,7 +322,324 @@
         </div>
       </section>
 
-      <!-- ==================== FULL RESELLER PROGRAM ==================== -->
+      <!-- ========== SCENTS — NOW 8 TOTAL + AG CLOUD ========== -->
+      <section id="scents" class="py-16 md:py-20" style="background: #fff">
+        <div class="max-w-6xl mx-auto px-5">
+          <div class="text-center mb-14">
+            <p
+              class="text-xs uppercase tracking-[0.25em] mb-3"
+              style="color: var(--accent)"
+            >
+              What You Will Sell
+            </p>
+            <h2
+              class="font-serif text-3xl md:text-5xl font-bold mb-4"
+              style="color: var(--text)"
+            >
+              Our Bestselling Scents
+            </h2>
+            <p class="text-lg max-w-2xl mx-auto" style="color: var(--muted)">
+              All AURA perfumes are
+              <strong>premium oil‑based, long‑lasting 6–8 hours</strong>. These
+              are the exact bestsellers you will get in your free tester kit.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
+                style="background: var(--accent-soft)"
+              >
+                🖤
+              </div>
+              <h3
+                class="font-serif text-xl font-bold mb-1"
+                style="color: var(--text)"
+              >
+                Lacoste Black
+              </h3>
+              <p
+                class="text-xs uppercase tracking-wider mb-3"
+                style="color: var(--accent)"
+              >
+                Masculine · Fresh Spicy Woody
+              </p>
+              <p
+                class="text-sm leading-relaxed mb-3"
+                style="color: var(--muted)"
+              >
+                Bold yet refined. Opens with zesty bergamot & black pepper,
+                dries down to smooth sandalwood, amber and warm musk. Confident,
+                clean, masculine vibe.
+              </p>
+              <p class="text-xs font-medium" style="color: var(--text)">
+                ✨ Best for: Office, school, gifts for him · ⏱️ 7+ hrs
+              </p>
+            </div>
+
+            <div
+              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
+                style="background: var(--accent-soft)"
+              >
+                🤍
+              </div>
+              <h3
+                class="font-serif text-xl font-bold mb-1"
+                style="color: var(--text)"
+              >
+                Vanilla Lace
+              </h3>
+              <p
+                class="text-xs uppercase tracking-wider mb-3"
+                style="color: var(--accent)"
+              >
+                Feminine · Warm Vanilla Floral
+              </p>
+              <p
+                class="text-sm leading-relaxed mb-3"
+                style="color: var(--muted)"
+              >
+                Soft, sweet & elegant. Creamy Madagascar vanilla wrapped in
+                white florals, jasmine & soft musk. Not cloying — smells like
+                expensive cozy luxury.
+              </p>
+              <p class="text-xs font-medium" style="color: var(--text)">
+                ✨ Best for: Dates, everyday, gifts for her · ⏱️ 6–7 hrs
+              </p>
+            </div>
+
+            <div
+              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
+                style="background: var(--accent-soft)"
+              >
+                🌿
+              </div>
+              <h3
+                class="font-serif text-xl font-bold mb-1"
+                style="color: var(--text)"
+              >
+                Dior Sauvage
+              </h3>
+              <p
+                class="text-xs uppercase tracking-wider mb-3"
+                style="color: var(--accent)"
+              >
+                Unisex Iconic · Citrus Ambroxan
+              </p>
+              <p
+                class="text-sm leading-relaxed mb-3"
+                style="color: var(--muted)"
+              >
+                World‑famous crowd‑pleaser. Bright Calabrian bergamot, spicy
+                Sichuan pepper & signature ambroxan drydown. Fresh, magnetic &
+                incredibly long‑lasting.
+              </p>
+              <p class="text-xs font-medium" style="color: var(--text)">
+                ✨ Best for: EVERY occasion · ⏱️ 8+ hrs
+              </p>
+            </div>
+
+            <div
+              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
+                style="background: var(--accent-soft)"
+              >
+                🎋
+              </div>
+              <h3
+                class="font-serif text-xl font-bold mb-1"
+                style="color: var(--text)"
+              >
+                Fresh Bamboo
+              </h3>
+              <p
+                class="text-xs uppercase tracking-wider mb-3"
+                style="color: var(--accent)"
+              >
+                Unisex · Clean Green Aquatic
+              </p>
+              <p
+                class="text-sm leading-relaxed mb-3"
+                style="color: var(--muted)"
+              >
+                Crisp, cool & so fresh. Green bamboo leaves, bright yuzu, soft
+                water lily & white tea. Smells like clean mountain air — perfect
+                for Philippine heat.
+              </p>
+              <p class="text-xs font-medium" style="color: var(--text)">
+                ✨ Best for: Hot days, non‑sweet lovers · ⏱️ 6 hrs
+              </p>
+            </div>
+
+            <div
+              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
+                style="background: var(--accent-soft)"
+              >
+                🏯
+              </div>
+              <h3
+                class="font-serif text-xl font-bold mb-1"
+                style="color: var(--text)"
+              >
+                Shangrila
+              </h3>
+              <p
+                class="text-xs uppercase tracking-wider mb-3"
+                style="color: var(--accent)"
+              >
+                Feminine Luxe · Floral Oriental
+              </p>
+              <p
+                class="text-sm leading-relaxed mb-3"
+                style="color: var(--muted)"
+              >
+                Elegant expensive scent. Rich jasmine sambac, rose, warm
+                sandalwood & honeyed amber. Smells exactly like a 5‑star hotel
+                lobby.
+              </p>
+              <p class="text-xs font-medium" style="color: var(--text)">
+                ✨ Best for: Events, weddings, premium gifts · ⏱️ 7–8 hrs
+              </p>
+            </div>
+
+            <div
+              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
+                style="background: var(--accent-soft)"
+              >
+                ✨
+              </div>
+              <h3
+                class="font-serif text-xl font-bold mb-1"
+                style="color: var(--text)"
+              >
+                Okada Premium
+              </h3>
+              <p
+                class="text-xs uppercase tracking-wider mb-3"
+                style="color: var(--accent)"
+              >
+                Unisex · Smoky Oud Vanilla Leather
+              </p>
+              <p
+                class="text-sm leading-relaxed mb-3"
+                style="color: var(--muted)"
+              >
+                Rich sophisticated luxury. Soft smoky oud, creamy vanilla,
+                smooth leather & warm amber. Deep, sexy, expensive‑smelling —
+                our most premium.
+              </p>
+              <p class="text-xs font-medium" style="color: var(--text)">
+                ✨ Best for: Nights, formal, gifts · ⏱️ 8+ hrs
+              </p>
+            </div>
+
+            <div
+              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
+                style="background: var(--accent-soft)"
+              >
+                🍑
+              </div>
+              <h3
+                class="font-serif text-xl font-bold mb-1"
+                style="color: var(--text)"
+              >
+                Nectarine Blossom & Honey
+              </h3>
+              <p
+                class="text-xs uppercase tracking-wider mb-3"
+                style="color: var(--accent)"
+              >
+                Feminine · Juicy Fruity Floral
+              </p>
+              <p
+                class="text-sm leading-relaxed mb-3"
+                style="color: var(--muted)"
+              >
+                Happy & juicy. Ripe nectarine, sweet spring blossom & soft honey
+                finish. Smells fresh, sweet & sunny like a perfect summer
+                morning.
+              </p>
+              <p class="text-xs font-medium" style="color: var(--text)">
+                ✨ Best for: Students, summer, everyday · ⏱️ 6 hrs
+              </p>
+            </div>
+
+            <!-- 🆕 NEW AG CLOUD ADDED HERE -->
+            <div
+              class="scent-card bg-[var(--bg)] p-6 rounded-2xl border"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-2xl"
+                style="background: var(--accent-soft)"
+              >
+                ☁️
+              </div>
+              <h3
+                class="font-serif text-xl font-bold mb-1"
+                style="color: var(--text)"
+              >
+                AG Cloud
+              </h3>
+              <p
+                class="text-xs uppercase tracking-wider mb-3"
+                style="color: var(--accent)"
+              >
+                Unisex · Clean Powdery Aquatic
+              </p>
+              <p
+                class="text-sm leading-relaxed mb-3"
+                style="color: var(--muted)"
+              >
+                Soft, airy, fresh‑out‑of‑the‑shower clean scent. Cool sea
+                breeze, crisp apple & watery notes, drying to clean white musk,
+                cotton & light florals. Smells like expensive fresh linen or a
+                5‑star hotel room —
+                <em>the ultimate “you smell so good” scent</em>.
+              </p>
+              <p class="text-xs font-medium" style="color: var(--text)">
+                ✨ Best for: Everyday, office, school, non‑sweet lovers, hot
+                weather · ⏱️ 6–7 hrs
+              </p>
+            </div>
+          </div>
+
+          <p class="text-center mt-10 text-sm" style="color: var(--muted)">
+            👉
+            <strong
+              >Full scent notes sent FREE to all approved resellers.</strong
+            >
+          </p>
+        </div>
+      </section>
+
       <section id="reseller" class="py-16 md:py-24 reseller-main">
         <div class="max-w-6xl mx-auto px-5">
           <div class="text-center mb-16">
@@ -250,23 +661,19 @@
               style="color: var(--muted)"
             >
               Four simple steps. No hidden fees. No complicated requirements.
-              Just pure earning opportunity.
             </p>
           </div>
 
-          <!-- HOW IT WORKS - 4 STEPS -->
           <div
             class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border mb-14"
             style="border-color: var(--border)"
           >
             <h3
               class="font-serif text-2xl md:text-3xl font-bold mb-10 text-center"
-              style="color: var(--text)"
             >
-              The 4-Step Reseller Process
+              The 4‑Step Reseller Process
             </h3>
             <div class="grid md:grid-cols-2 gap-8 md:gap-10">
-              <!-- STEP 1 -->
               <div class="flex gap-5 items-start">
                 <div
                   class="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center font-serif font-bold text-2xl"
@@ -275,17 +682,13 @@
                   1
                 </div>
                 <div>
-                  <h4 class="font-bold text-xl mb-2" style="color: var(--text)">
-                    Message Us to Join
-                  </h4>
+                  <h4 class="font-bold text-xl mb-2">Message Us to Join</h4>
                   <p style="color: var(--muted)">
-                    Send us a message on Facebook and say
-                    <em>"I want to be a reseller"</em>. We'll confirm your
-                    details and get you started right away.
+                    Send “I want to be a reseller” on Facebook. We confirm and
+                    onboard you immediately.
                   </p>
                 </div>
               </div>
-              <!-- STEP 2 -->
               <div class="flex gap-5 items-start">
                 <div
                   class="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center font-serif font-bold text-2xl"
@@ -294,17 +697,13 @@
                   2
                 </div>
                 <div>
-                  <h4 class="font-bold text-xl mb-2" style="color: var(--text)">
-                    Get Your FREE Tester
-                  </h4>
+                  <h4 class="font-bold text-xl mb-2">Get Your FREE Tester</h4>
                   <p style="color: var(--muted)">
-                    We will give you a <strong>free tester kit</strong> so you
-                    can personally smell, test, and showcase all our scents to
-                    your friends and customers. <em>No payment required.</em>
+                    Free tester kit of all <strong>8 scents</strong> so you can
+                    smell & showcase. <em>No payment.</em>
                   </p>
                 </div>
               </div>
-              <!-- STEP 3 - UPDATED PER YOUR REQUEST -->
               <div class="flex gap-5 items-start">
                 <div
                   class="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center font-serif font-bold text-2xl"
@@ -313,20 +712,16 @@
                   3
                 </div>
                 <div>
-                  <h4 class="font-bold text-xl mb-2" style="color: var(--text)">
+                  <h4 class="font-bold text-xl mb-2">
                     Sell & Send Us the Order
                   </h4>
                   <p style="color: var(--muted)">
-                    Sell at any price you want. When a customer orders from you,
-                    <strong>message us the order details</strong>. We will give
-                    you the perfume first so
-                    <strong
-                      >you can personally deliver it to your customer</strong
-                    >.
+                    Sell at ANY price. Message us the order →
+                    <strong>we give you the perfume FIRST</strong> → you
+                    deliver.
                   </p>
                 </div>
               </div>
-              <!-- STEP 4 - UPDATED PER YOUR REQUEST -->
               <div class="flex gap-5 items-start">
                 <div
                   class="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center font-serif font-bold text-2xl"
@@ -335,244 +730,411 @@
                   4
                 </div>
                 <div>
-                  <h4 class="font-bold text-xl mb-2" style="color: var(--text)">
+                  <h4 class="font-bold text-xl mb-2">
                     Deliver & Pay Us Only Then
                   </h4>
                   <p style="color: var(--muted)">
-                    You give the perfume to your customer and collect your full
-                    selling price.
-                    <strong>That is the only time you pay us</strong> — just our
-                    fixed original price per bottle.
-                    <strong>Everything extra is 100% your profit.</strong>
+                    Collect FULL payment from customer →
+                    <strong>only THEN pay us our fixed original price</strong>.
+                    Rest = YOURS.
                   </p>
                 </div>
               </div>
             </div>
-
-            <!-- CLEAR PROCESS SUMMARY -->
-            <div
-              class="mt-10 p-6 md:p-8 rounded-2xl"
-              style="background: var(--accent-soft)"
-            >
-              <p
-                class="text-center font-semibold text-base md:text-lg leading-relaxed"
-                style="color: var(--text)"
-              >
-                🔑 <strong>YOUR ADVANTAGE:</strong> You never pay us first. You
-                get the perfume → you give it to your customer → you get paid by
-                them → <em>then</em> you pay us our original price.
-                <strong>Zero risk for you, always.</strong>
+            <div class="promise-badge mt-10 p-6 rounded-2xl text-center">
+              <p class="font-bold text-lg md:text-xl mb-1">
+                🔑 REMEMBER: <u>YOU NEVER PAY US FIRST</u>
+              </p>
+              <p class="text-sm md:text-base opacity-95">
+                Get perfume → Deliver → Get paid → Pay us. Zero risk, always.
               </p>
             </div>
           </div>
 
-          <!-- BENEFITS -->
           <div
             class="bg-white rounded-3xl p-8 md:p-10 shadow-sm border mb-14"
             style="border-color: var(--border)"
           >
             <h3
               class="font-serif text-2xl md:text-3xl font-bold mb-8 text-center"
-              style="color: var(--text)"
             >
               What You Get As A Reseller
             </h3>
             <div class="grid md:grid-cols-2 gap-3">
               <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span
-                  class="text-2xl flex-shrink-0"
-                  style="color: var(--accent)"
-                  >✓</span
-                >
-                <span
-                  ><strong>Absolutely ₱0 capital needed</strong> — no investment
-                  required to start</span
+                <span style="color: var(--accent)">✓</span
+                ><span><strong>₱0 capital</strong> — no investment</span>
+              </div>
+              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
+                <span style="color: var(--accent)">✓</span
+                ><span
+                  ><strong>Free complete tester kit (8 scents)</strong></span
                 >
               </div>
               <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span
-                  class="text-2xl flex-shrink-0"
-                  style="color: var(--accent)"
-                  >✓</span
-                >
-                <span
-                  ><strong>Free complete tester kit</strong> — smell and show
-                  all scents</span
-                >
+                <span style="color: var(--accent)">✓</span
+                ><span>No need to buy / hold stocks</span>
               </div>
               <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span
-                  class="text-2xl flex-shrink-0"
-                  style="color: var(--accent)"
-                  >✓</span
-                >
-                <span
-                  ><strong>No need to buy any stock</strong> — never risk money
-                  on unsold items</span
-                >
+                <span style="color: var(--accent)">✓</span
+                ><span><strong>You set your own selling price</strong></span>
               </div>
               <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span
-                  class="text-2xl flex-shrink-0"
-                  style="color: var(--accent)"
-                  >✓</span
-                >
-                <span
-                  ><strong>You set your own selling price</strong> — bigger
-                  markup = bigger earnings</span
-                >
+                <span style="color: var(--accent)">✓</span
+                ><span>Get perfume first BEFORE paying</span>
               </div>
               <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span
-                  class="text-2xl flex-shrink-0"
-                  style="color: var(--accent)"
-                  >✓</span
-                >
-                <span
-                  ><strong>You get the perfume first</strong> before paying
-                  anything</span
-                >
+                <span style="color: var(--accent)">✓</span
+                ><span>Pay only AFTER customer pays YOU</span>
               </div>
               <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span
-                  class="text-2xl flex-shrink-0"
-                  style="color: var(--accent)"
-                  >✓</span
-                >
-                <span
-                  ><strong>You pay us only after</strong> your customer has paid
-                  you</span
-                >
+                <span style="color: var(--accent)">✓</span
+                ><span><strong>100% of markup is yours</strong></span>
               </div>
               <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span
-                  class="text-2xl flex-shrink-0"
-                  style="color: var(--accent)"
-                  >✓</span
-                >
-                <span
-                  ><strong>100% of your markup goes to you</strong> — we only
-                  get our fixed original price</span
-                >
+                <span style="color: var(--accent)">✓</span
+                ><span>Premium oil‑based long‑lasting scents</span>
               </div>
               <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span
-                  class="text-2xl flex-shrink-0"
-                  style="color: var(--accent)"
-                  >✓</span
-                >
-                <span
-                  ><strong>Premium, long-lasting perfumes</strong> —
-                  high-quality products that sell easily</span
-                >
+                <span style="color: var(--accent)">✓</span
+                ><span>Sell anytime, anywhere</span>
               </div>
               <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span
-                  class="text-2xl flex-shrink-0"
-                  style="color: var(--accent)"
-                  >✓</span
-                >
-                <span
-                  ><strong>Sell anytime, anywhere</strong> — extra income that
-                  fits your schedule</span
-                >
-              </div>
-              <div class="benefit-item flex items-center gap-4 p-4 rounded-xl">
-                <span
-                  class="text-2xl flex-shrink-0"
-                  style="color: var(--accent)"
-                  >✓</span
-                >
-                <span
-                  ><strong>Free delivery within Baybay</strong> for your order
-                  pickups</span
-                >
+                <span style="color: var(--accent)">✓</span
+                ><span>Free pickup/delivery within Baybay</span>
               </div>
             </div>
           </div>
 
-          <!-- SIMPLE RULES -->
-          <div
-            class="bg-white rounded-3xl p-8 md:p-10 border mb-14"
-            style="border-color: var(--border)"
-          >
-            <h3
-              class="font-serif text-2xl md:text-3xl font-bold mb-6 text-center"
-              style="color: var(--text)"
-            >
-              Simple Reseller Guidelines
-            </h3>
-            <div
-              class="grid md:grid-cols-2 gap-4 text-sm md:text-base max-w-4xl mx-auto"
-              style="color: var(--muted)"
-            >
-              <p>
-                • Only sell original AURA Parfums — no mixing, repacking, or
-                counterfeits.
-              </p>
-              <p>
-                • Always confirm your customer's order and payment before
-                claiming the perfume from us.
-              </p>
-              <p>
-                • Pay our fixed original price promptly once you have received
-                payment from your customer.
-              </p>
-              <p>
-                • Represent our brand honestly and respectfully to your
-                customers.
-              </p>
-              <p>
-                • Feel free to sell at any price you are comfortable with — no
-                price restrictions.
-              </p>
-              <p>
-                • Build your own customer base and earn as much as you want,
-                whenever you want.
-              </p>
-            </div>
-          </div>
-
-          <!-- FINAL CTA -->
           <div class="text-center max-w-3xl mx-auto">
-            <h3
-              class="font-serif text-3xl md:text-5xl font-bold mb-5"
-              style="color: var(--text)"
-            >
+            <h3 class="font-serif text-3xl md:text-5xl font-bold mb-5">
               Ready to start earning?
             </h3>
-            <p class="text-lg md:text-xl mb-10" style="color: var(--muted)">
-              Send us a message on Facebook right now. Just say
-              <em>"I want to be a reseller"</em> and we'll send your free tester
-              immediately.
-            </p>
             <a
               href="https://www.facebook.com/messages/t/"
               target="_blank"
-              class="btn-primary px-12 py-5 rounded-full font-bold text-lg md:text-xl inline-block shadow-2xl"
+              class="btn-primary px-12 py-5 rounded-full font-bold text-lg shadow-2xl"
+              >💬 Message Us — Become a Reseller Today</a
             >
-              💬 Message Us — Become a Reseller Today
-            </a>
-            <p class="text-sm md:text-base mt-6" style="color: var(--muted)">
-              No fees. No obligations. No risk. Start when you want, earn as
-              much as you want.
-            </p>
           </div>
         </div>
       </section>
 
-      <!-- ==================== CONTACT ==================== -->
+      <!-- ========== FAQ — UPDATED TO 8 SCENTS ========== -->
+      <section id="faq" class="py-16 md:py-20" style="background: #fff">
+        <div class="max-w-3xl mx-auto px-5">
+          <div class="text-center mb-12">
+            <p
+              class="text-xs uppercase tracking-[0.25em] mb-3"
+              style="color: var(--accent)"
+            >
+              Frequently Asked
+            </p>
+            <h2 class="font-serif text-3xl md:text-5xl font-bold mb-4">
+              Questions? We Answer
+            </h2>
+          </div>
+          <div class="space-y-3">
+            <div
+              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="faq-q p-5 flex justify-between"
+                onclick="toggleFaq(this)"
+              >
+                <strong>❓ Do I really need zero capital to start?</strong
+                ><span
+                  class="faq-icon text-2xl font-bold"
+                  style="color: var(--accent)"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a px-5" style="color: var(--muted)">
+                <div class="pb-5">
+                  Yes, 100%. No fees, no registration, no payment of any kind.
+                </div>
+              </div>
+            </div>
+            <div
+              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="faq-q p-5 flex justify-between"
+                onclick="toggleFaq(this)"
+              >
+                <strong>❓ When do I get my free tester?</strong
+                ><span
+                  class="faq-icon text-2xl font-bold"
+                  style="color: var(--accent)"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a px-5" style="color: var(--muted)">
+                <div class="pb-5">
+                  Right after you message us to confirm your join. We give it
+                  same‑day in Baybay.
+                </div>
+              </div>
+            </div>
+            <div
+              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="faq-q p-5 flex justify-between"
+                onclick="toggleFaq(this)"
+              >
+                <strong>❓ How much is your original price per bottle?</strong
+                ><span
+                  class="faq-icon text-2xl font-bold"
+                  style="color: var(--accent)"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a px-5" style="color: var(--muted)">
+                <div class="pb-5">
+                  Message us and we will send the full confidential price list
+                  (resellers only).
+                </div>
+              </div>
+            </div>
+            <div
+              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="faq-q p-5 flex justify-between"
+                onclick="toggleFaq(this)"
+              >
+                <strong>❓ Can I sell outside Baybay?</strong
+                ><span
+                  class="faq-icon text-2xl font-bold"
+                  style="color: var(--accent)"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a px-5" style="color: var(--muted)">
+                <div class="pb-5">
+                  Yes! We can arrange delivery to Ormoc / Palompon / etc. for
+                  small fee.
+                </div>
+              </div>
+            </div>
+            <!-- ✅ COUNT = 8 NOW -->
+            <div
+              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="faq-q p-5 flex justify-between"
+                onclick="toggleFaq(this)"
+              >
+                <strong>❓ How many scents do you have?</strong
+                ><span
+                  class="faq-icon text-2xl font-bold"
+                  style="color: var(--accent)"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a px-5" style="color: var(--muted)">
+                <div class="pb-5">
+                  <strong>8 scents</strong>, all long‑lasting oil‑based. We add
+                  new limited scents regularly.
+                </div>
+              </div>
+            </div>
+            <div
+              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="faq-q p-5 flex justify-between"
+                onclick="toggleFaq(this)"
+              >
+                <strong>❓ When do I pay you?</strong
+                ><span
+                  class="faq-icon text-2xl font-bold"
+                  style="color: var(--accent)"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a px-5" style="color: var(--muted)">
+                <div class="pb-5">
+                  Only after you have received full payment from your customer.
+                </div>
+              </div>
+            </div>
+            <div
+              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="faq-q p-5 flex justify-between"
+                onclick="toggleFaq(this)"
+              >
+                <strong>❓ Is there a sales quota?</strong
+                ><span
+                  class="faq-icon text-2xl font-bold"
+                  style="color: var(--accent)"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a px-5" style="color: var(--muted)">
+                <div class="pb-5">
+                  None! Sell 1 bottle or 100 — totally up to you.
+                </div>
+              </div>
+            </div>
+            <div
+              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="faq-q p-5 flex justify-between"
+                onclick="toggleFaq(this)"
+              >
+                <strong
+                  >❓ Can I be a reseller even if I'm a
+                  student/housewife?</strong
+                ><span
+                  class="faq-icon text-2xl font-bold"
+                  style="color: var(--accent)"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a px-5" style="color: var(--muted)">
+                <div class="pb-5">
+                  YES! 90% of our resellers are students & stay‑at‑home moms
+                  from Baybay.
+                </div>
+              </div>
+            </div>
+            <div
+              class="faq-item bg-[var(--bg)] rounded-2xl border overflow-hidden"
+              style="border-color: var(--border)"
+            >
+              <div
+                class="faq-q p-5 flex justify-between"
+                onclick="toggleFaq(this)"
+              >
+                <strong
+                  >❓ How do I get the perfume when I have an order?</strong
+                ><span
+                  class="faq-icon text-2xl font-bold"
+                  style="color: var(--accent)"
+                  >+</span
+                >
+              </div>
+              <div class="faq-a px-5" style="color: var(--muted)">
+                <div class="pb-5">
+                  Message us the order → we prepare → you pick up / we deliver
+                  to you in Baybay → you deliver to customer.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portal" class="py-16 md:py-20">
+        <div class="max-w-4xl mx-auto px-5">
+          <div class="text-center mb-10">
+            <p
+              class="text-xs uppercase tracking-[0.25em] mb-3"
+              style="color: var(--accent)"
+            >
+              For Active Resellers Only
+            </p>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-3">
+              🔐 Reseller Portal
+            </h2>
+          </div>
+          <div
+            id="portal-login"
+            class="bg-white p-8 rounded-3xl border max-w-md mx-auto"
+            style="border-color: var(--border)"
+          >
+            <input
+              type="password"
+              id="portal-pw"
+              class="w-full border px-3 py-2.5 rounded-lg mb-2"
+              placeholder="Enter reseller password"
+              onkeypress="if (event.key === 'Enter') openPortal();"
+            />
+            <p id="portal-error" class="hidden text-sm text-red-500 mb-2">
+              ❌ Wrong password
+            </p>
+            <button
+              onclick="openPortal()"
+              class="btn-primary w-full py-3 rounded-xl font-medium"
+            >
+              Enter Portal
+            </button>
+          </div>
+          <div
+            id="portal-content"
+            class="hidden bg-white rounded-3xl border overflow-hidden"
+            style="border-color: var(--border)"
+          >
+            <div
+              class="p-6 flex flex-wrap justify-between border-b"
+              style="
+                border-color: var(--border);
+                background: var(--accent-soft);
+              "
+            >
+              <h3 class="font-serif text-2xl font-bold">
+                👋 Welcome AURA Reseller!
+              </h3>
+              <button
+                onclick="closePortal()"
+                class="btn-outline px-5 py-2 rounded-lg text-sm"
+              >
+                Logout
+              </button>
+            </div>
+            <div class="p-6 md:p-8 grid md:grid-cols-2 gap-6">
+              <div
+                class="p-5 rounded-2xl border"
+                style="border-color: var(--border); background: var(--bg)"
+              >
+                <h4 class="font-bold text-lg mb-3">
+                  💰 Confidential Original Price List
+                </h4>
+                <ul class="text-sm space-y-1.5">
+                  <li>• Lacoste Black — <strong>₱159</strong></li>
+                  <li>• Vanilla Lace — <strong>₱152</strong></li>
+                  <li>• Dior Sauvage — <strong>₱163</strong></li>
+                  <li>• Bamboo Zen — <strong>₱155</strong></li>
+                  <li>• Misty Peak — <strong>₱154</strong></li>
+                  <li>• Golden Hour — <strong>₱155</strong></li>
+                  <li>• Honey Dew — <strong>₱154</strong></li>
+                  <li>• Velvet Sky — <strong>₱157</strong></li>
+                </ul>
+              </div>
+              <div
+                class="p-5 rounded-2xl border"
+                style="border-color: var(--border); background: var(--bg)"
+              >
+                <h4 class="font-bold text-lg mb-3">📦 Live Stock Update</h4>
+                <ul class="text-sm space-y-1.5">
+                  <li>✅ All 8 scents available</li>
+                  <li>⚠️ Low stock: —</li>
+                  <li>❌ Out of stock: —</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="py-16 md:py-20" style="background: #fff">
         <div class="max-w-4xl mx-auto px-5 text-center">
-          <h2
-            class="font-serif text-3xl md:text-4xl font-bold mb-4"
-            style="color: var(--text)"
-          >
+          <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">
             Questions? Message Us
           </h2>
-          <p class="text-lg mb-10" style="color: var(--muted)">
-            Interested to join? Need more details? We're just one message away.
-          </p>
           <a
             href="https://www.facebook.com/messages/t/"
             target="_blank"
@@ -585,69 +1147,70 @@
             </svg>
             Message AURA Parfums on Facebook
           </a>
-          <div
-            class="mt-12 pt-8 border-t max-w-2xl mx-auto"
-            style="border-color: var(--border)"
-          >
-            <p class="font-medium text-lg" style="color: var(--text)">
-              📍 Based in Baybay | 🚚 Free pickup / delivery within Baybay for
-              resellers
-            </p>
-          </div>
+          <p class="mt-8 font-medium">
+            📍 Baybay Based · 🚚 Free within Baybay
+          </p>
         </div>
       </section>
 
-      <!-- FOOTER -->
-      <footer
-        class="py-10 border-t"
-        style="border-color: var(--border); background: var(--bg)"
-      >
-        <div class="max-w-6xl mx-auto px-5 text-center">
-          <p
-            class="font-serif text-2xl font-bold mb-2"
-            style="color: var(--text)"
-          >
-            AURA Parfums
-          </p>
-          <p class="text-sm mb-4" style="color: var(--muted)">
-            Premium Scents · Reseller Opportunities · Baybay Based
-          </p>
-          <p class="text-xs" style="color: var(--muted)">
-            © 2026 AURA Parfums. All rights reserved.
+      <footer class="py-10 border-t" style="border-color: var(--border)">
+        <div class="text-center">
+          <p class="font-serif text-2xl font-bold">AURA Parfums</p>
+          <p class="text-xs mt-2" style="color: var(--muted)">
+            © 2026 · Premium Scents · Zero Capital Reseller Program
           </p>
         </div>
       </footer>
+
+      <a
+        href="https://www.facebook.com/messages/t/"
+        target="_blank"
+        class="sticky-cta"
+        >💬 Message Us — Become a Reseller</a
+      >
+      <a
+        href="https://www.facebook.com/messages/t/"
+        target="_blank"
+        class="float-messenger"
+        ><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff">
+          <path
+            d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.437 5.503 3.682 7.2V22l3.405-1.868c.95.262 1.953.404 2.913.404 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.5 14.5l-2.5-2.7-4.8 2.6 5.2-5.6 2.6 2.7 4.7-2.6-5.2 5.6z"
+          /></svg
+      ></a>
     </div>
-  </div>
-
-  <script>
-    // === REPLACE WITH YOUR ACTUAL FACEBOOK MESSENGER LINK ===
-    const FACEBOOK_URL = "https://www.facebook.com/melisa.loreto.2025";
-
-    document.addEventListener("DOMContentLoaded", () => {
-      document
-        .querySelectorAll('a[href*="facebook.com/messages"]')
-        .forEach((a) => {
-          a.href = FACEBOOK_URL;
-        });
-    });
-
-    function toggleMenu() {
-      document.getElementById("mobile-menu").classList.toggle("hidden");
-    }
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
-      link.addEventListener("click", (e) => {
-        const id = link.getAttribute("href");
-        if (id.length > 1) {
-          const el = document.querySelector(id);
-          if (el) {
-            e.preventDefault();
-            el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        }
+    <script>
+      const FACEBOOK_URL = "https://www.facebook.com/melisa.loreto.2025";
+      const DEFAULT_PORTAL_PASSWORD = "aurareseller2026";
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .querySelectorAll('a[href*="facebook.com/messages"]')
+          .forEach((a) => (a.href = FACEBOOK_URL));
       });
-    });
-  </script>
+      function toggleMenu() {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+      }
+      function toggleFaq(e) {
+        const p = e.parentElement;
+        const o = p.classList.contains("open");
+        document
+          .querySelectorAll(".faq-item")
+          .forEach((i) => i.classList.remove("open"));
+        if (!o) p.classList.add("open");
+      }
+      function openPortal() {
+        if (
+          document.getElementById("portal-pw").value === DEFAULT_PORTAL_PASSWORD
+        ) {
+          document.getElementById("portal-login").classList.add("hidden");
+          document.getElementById("portal-content").classList.remove("hidden");
+        } else
+          document.getElementById("portal-error").classList.remove("hidden");
+      }
+      function closePortal() {
+        document.getElementById("portal-content").classList.add("hidden");
+        document.getElementById("portal-login").classList.remove("hidden");
+        document.getElementById("portal-pw").value = "";
+      }
+    </script>
+  </body>
 </html>
