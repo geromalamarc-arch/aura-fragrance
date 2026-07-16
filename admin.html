@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURA Parfums — Admin Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome (BEST icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#D4AF37", // AURA GOLD
+              secondary: "#F0E6CC", // CREAM
+              dark: "#1A1A1A", // CHARCOAL
+              light: "#F9F5F0", // OFF-WHITE
+              muted: "#7A7A7A", // SOFT GRAY
+              success: "#10B981",
+              warning: "#F59E0B",
+              danger: "#EF4444",
+            },
+            fontFamily: {
+              serif: ["Playfair Display", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f9f5f0;
+        color: #1a1a1a;
+      }
+      .card-hover {
+        transition: all 0.25s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      }
+      .btn-primary {
+        @apply bg-primary text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:bg-primary/90 hover:shadow-lg transition-all;
+      }
+      .btn-secondary {
+        @apply bg-white border border-gray-300 text-dark font-semibold py-3 px-6 rounded-xl hover:bg-gray-50 transition-all;
+      }
+      .btn-danger {
+        @apply bg-danger text-white font-semibold py-3 px-6 rounded-xl hover:bg-red-600 transition-all;
+      }
+      .input {
+        @apply w-full border border-gray-300 px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all;
+      }
+      .stock-in {
+        color: #10b981;
+      }
+      .stock-low {
+        color: #f59e0b;
+      }
+      .stock-out {
+        color: #ef4444;
+      }
+      .toast {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: #1a1a1a;
+        color: #fff;
+        padding: 14px 22px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transform: translateY(120px);
+        opacity: 0;
+        transition: all 0.35s ease;
+        z-index: 100;
+      }
+      .toast.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- ============ LOGIN SCREEN ============ -->
+    <div
+      id="login-screen"
+      class="min-h-screen flex items-center justify-center px-4"
+    >
+      <div
+        class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md card-hover"
+      >
+        <div class="text-center mb-8">
+          <div
+            class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/15 text-primary mb-4"
+          >
+            <i class="fas fa-lock text-2xl"></i>
+          </div>
+          <h1 class="font-serif text-3xl font-bold mb-2">Admin Login</h1>
+          <p class="text-muted">AURA Parfums Dashboard</p>
+        </div>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-2">Admin Password</label>
+            <input
+              type="password"
+              id="admin-pw"
+              class="input"
+              placeholder="Enter your password"
+              autofocus
+            />
+          </div>
+          <p id="login-error" class="text-sm text-danger hidden">
+            <i class="fas fa-exclamation-circle mr-1"></i> Wrong password. Try
+            again.
+          </p>
+          <button onclick="login()" class="btn-primary w-full">
+            <i class="fas fa-right-to-bracket mr-2"></i> Enter Dashboard
+          </button>
+          <p class="text-xs text-muted text-center mt-4">
+            <i class="fas fa-info-circle mr-1"></i> Default:
+            <code class="bg-gray-100 px-2 py-0.5 rounded">auraadmin2026</code>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ DASHBOARD (hidden until login) ============ -->
+    <div id="dashboard" class="hidden">
+      <!-- Top Nav -->
+      <header
+        class="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm"
+      >
+        <div
+          class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
+        >
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 rounded-xl bg-primary/15 text-primary flex items-center justify-center"
+            >
+              <i class="fas fa-perfume text-lg"></i>
+            </div>
+            <div>
+              <h1 class="font-serif text-xl font-bold leading-tight">
+                AURA Parfums
+              </h1>
+              <p class="text-xs text-muted">
+                Admin Dashboard · Price & Stock Manager
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <a
+              href="index.html"
+              target="_blank"
+              class="btn-secondary !py-2 !px-4 text-sm"
+            >
+              <i class="fas fa-eye mr-1"></i> View Site
+            </a>
+            <button
+              onclick="logout()"
+              class="text-muted hover:text-danger transition-colors text-sm"
+            >
+              <i class="fas fa-right-from-bracket mr-1"></i> Logout
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main -->
+      <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div class="bg-white rounded-2xl p-5 shadow-sm card-hover">
+            <div class="text-muted text-xs uppercase tracking-wide mb-1">
+              Total Scents
+            </div>
+            <div class="text-3xl font-bold" id="stat-total">8</div>
+          </div>
+          <div class="bg-white rounded-2xl p-5 shadow-sm card-hover">
+            <div class="text-success text-xs uppercase tracking-wide mb-1">
+              In Stock
+            </div>
+            <div class="text-3xl font-bold stock-in" id="stat-in">0</div>
+          </div>
+          <div class="bg-white rounded-2xl p-5 shadow-sm card-hover">
+            <div class="text-warning text-xs uppercase tracking-wide mb-1">
+              Low Stock
+            </div>
+            <div class="text-3xl font-bold stock-low" id="stat-low">0</div>
+          </div>
+          <div class="bg-white rounded-2xl p-5 shadow-sm card-hover">
+            <div class="text-danger text-xs uppercase tracking-wide mb-1">
+              Out of Stock
+            </div>
+            <div class="text-3xl font-bold stock-out" id="stat-out">0</div>
+          </div>
+        </div>
+
+        <!-- Action Bar -->
+        <div
+          class="bg-white rounded-2xl shadow-sm p-5 mb-6 flex flex-wrap items-center justify-between gap-3"
+        >
+          <div>
+            <h2 class="font-serif text-2xl font-bold">Edit Prices & Stocks</h2>
+            <p class="text-sm text-muted">
+              Change any value below, then click
+              <strong>Save All Changes</strong>.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button
+              onclick="resetDefaults()"
+              class="btn-secondary !py-2.5 !px-4 text-sm"
+            >
+              <i class="fas fa-rotate-left mr-1"></i> Reset Defaults
+            </button>
+            <button
+              onclick="saveAll()"
+              class="btn-primary !py-2.5 !px-5 text-sm"
+            >
+              <i class="fas fa-floppy-disk mr-1"></i> Save All Changes
+            </button>
+          </div>
+        </div>
+
+        <!-- Editor Table -->
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead
+                class="bg-gray-50 border-b border-gray-200 text-muted text-xs uppercase tracking-wide"
+              >
+                <tr>
+                  <th class="text-left px-5 py-4 font-semibold">Scent</th>
+                  <th class="text-left px-5 py-4 font-semibold w-44">
+                    Your Cost (₱)
+                  </th>
+                  <th class="text-left px-5 py-4 font-semibold w-44">
+                    Suggested SRP (₱)
+                  </th>
+                  <th class="text-left px-5 py-4 font-semibold w-48">
+                    Stock Status
+                  </th>
+                  <th class="text-left px-5 py-4 font-semibold w-40">
+                    Stock Note
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="editor-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Bottom Actions -->
+        <div class="mt-6 flex flex-wrap gap-3 justify-end">
+          <button onclick="resetDefaults()" class="btn-secondary">
+            <i class="fas fa-rotate-left mr-2"></i> Reset Defaults
+          </button>
+          <button onclick="saveAll()" class="btn-primary">
+            <i class="fas fa-floppy-disk mr-2"></i> Save All Changes
+          </button>
+        </div>
+
+        <!-- How it works -->
+        <div
+          class="mt-10 bg-primary/5 border border-primary/20 rounded-2xl p-6"
+        >
+          <h3 class="font-bold text-lg mb-2">
+            <i class="fas fa-lightbulb text-primary mr-2"></i> How to use
+          </h3>
+          <ol class="text-sm text-muted space-y-1 list-decimal list-inside">
+            <li>
+              Edit the <strong>Your Cost</strong> (confidential reseller price)
+              and <strong>Suggested SRP</strong> for each scent.
+            </li>
+            <li>
+              Set <strong>Stock Status</strong>:
+              <span class="stock-in font-semibold">In Stock</span> ·
+              <span class="stock-low font-semibold">Low Stock</span> ·
+              <span class="stock-out font-semibold">Out of Stock</span>.
+            </li>
+            <li>
+              Add an optional <strong>Stock Note</strong> (e.g. "5 bottles left"
+              or "Restock next week").
+            </li>
+            <li>
+              Click <strong class="text-primary">Save All Changes</strong>.
+              That's it!
+            </li>
+            <li>
+              Open <code>index.html</code> (main site) and refresh — the new
+              prices & stocks appear automatically.
+            </li>
+          </ol>
+        </div>
+      </main>
+
+      <footer class="text-center text-xs text-muted py-8">
+        © 2026 AURA Parfums · Admin Dashboard
+      </footer>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast">
+      <i class="fas fa-check-circle mr-2"></i>
+      <span id="toast-msg">Saved!</span>
+    </div>
+
+    <script>
+      // ============================================================
+      // ADMIN CONFIG — CHANGE THESE!
+      // ============================================================
+      const ADMIN_PASSWORD = "auraadmin2026"; // 👈 Change this password!
+
+      // DEFAULT DATA — edit these base values if you want
+      const DEFAULT_DATA = {
+        lastUpdated: null,
+        scents: [
+          {
+            id: "lacoste",
+            name: "Lacoste Black",
+            category: "Masculine",
+            cost: 0,
+            srp: 0,
+            stock: "in",
+            note: "",
+          },
+          {
+            id: "vanilla",
+            name: "Vanilla Lace",
+            category: "Feminine",
+            cost: 0,
+            srp: 0,
+            stock: "in",
+            note: "",
+          },
+          {
+            id: "sauvage",
+            name: "Dior Sauvage",
+            category: "Unisex",
+            cost: 0,
+            srp: 0,
+            stock: "in",
+            note: "",
+          },
+          {
+            id: "bamboo",
+            name: "Fresh Bamboo",
+            category: "Unisex",
+            cost: 0,
+            srp: 0,
+            stock: "in",
+            note: "",
+          },
+          {
+            id: "shangrila",
+            name: "Shangrila",
+            category: "Feminine",
+            cost: 0,
+            srp: 0,
+            stock: "in",
+            note: "",
+          },
+          {
+            id: "okada",
+            name: "Okada Premium",
+            category: "Unisex",
+            cost: 0,
+            srp: 0,
+            stock: "in",
+            note: "",
+          },
+          {
+            id: "nectarine",
+            name: "Nectarine Blossom & Honey",
+            category: "Feminine",
+            cost: 0,
+            srp: 0,
+            stock: "in",
+            note: "",
+          },
+          {
+            id: "cloud",
+            name: "AG Cloud",
+            category: "Unisex",
+            cost: 0,
+            srp: 0,
+            stock: "in",
+            note: "",
+          },
+        ],
+      };
+
+      const STORAGE_KEY = "aura_parfums_data";
+      const SESSION_KEY = "aura_admin_logged_in";
+
+      // ============================================================
+      // AUTH
+      // ============================================================
+      function login() {
+        const pw = document.getElementById("admin-pw").value.trim();
+        if (pw === ADMIN_PASSWORD) {
+          sessionStorage.setItem(SESSION_KEY, "1");
+          document.getElementById("login-screen").classList.add("hidden");
+          document.getElementById("dashboard").classList.remove("hidden");
+          loadData();
+          renderEditor();
+        } else {
+          document.getElementById("login-error").classList.remove("hidden");
+          document.getElementById("admin-pw").value = "";
+          document.getElementById("admin-pw").focus();
+        }
+      }
+      function logout() {
+        sessionStorage.removeItem(SESSION_KEY);
+        location.reload();
+      }
+      // Enter key to login
+      document.getElementById("admin-pw")?.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") login();
+      });
+
+      // Auto-login if session exists
+      if (sessionStorage.getItem(SESSION_KEY) === "1") {
+        document.getElementById("login-screen").classList.add("hidden");
+        document.getElementById("dashboard").classList.remove("hidden");
+        loadData();
+        renderEditor();
+      }
+
+      // ============================================================
+      // DATA
+      // ============================================================
+      let data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+
+      function loadData() {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          try {
+            const saved = JSON.parse(raw);
+            // Merge saved fields into defaults (preserves new scents added later)
+            data.scents.forEach((s, i) => {
+              if (saved.scents && saved.scents[i]) {
+                Object.assign(s, saved.scents[i]);
+              }
+            });
+            data.lastUpdated = saved.lastUpdated || null;
+          } catch (e) {
+            data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+          }
+        }
+      }
+
+      function saveAll() {
+        // Read values from form into data
+        data.scents.forEach((s) => {
+          s.cost =
+            parseFloat(document.getElementById(`cost-${s.id}`).value) || 0;
+          s.srp = parseFloat(document.getElementById(`srp-${s.id}`).value) || 0;
+          s.stock = document.getElementById(`stock-${s.id}`).value;
+          s.note = document.getElementById(`note-${s.id}`).value.trim();
+        });
+        data.lastUpdated = new Date().toISOString();
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        updateStats();
+        showToast(
+          "✅ All changes saved! Main site will auto-update on refresh.",
+        );
+      }
+
+      function resetDefaults() {
+        if (
+          !confirm(
+            "Reset ALL prices and stocks to original defaults? This cannot be undone.",
+          )
+        )
+          return;
+        data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+        localStorage.removeItem(STORAGE_KEY);
+        renderEditor();
+        showToast("↺ Reset to defaults");
+      }
+
+      // ============================================================
+      // RENDER
+      // ============================================================
+      function renderEditor() {
+        const body = document.getElementById("editor-body");
+        body.innerHTML = data.scents
+          .map(
+            (s) => `
+                <tr class="border-b border-gray-100 hover:bg-gray-50/60 transition-colors">
+                    <td class="px-5 py-4">
+                        <div class="font-semibold text-dark">${s.name}</div>
+                        <div class="text-xs text-muted">${s.category}</div>
+                    </td>
+                    <td class="px-5 py-4">
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-muted">₱</span>
+                            <input type="number" id="cost-${s.id}" value="${s.cost}" step="1" min="0"
+                                class="input pl-8 !py-2.5 font-mono" placeholder="0">
+                        </div>
+                    </td>
+                    <td class="px-5 py-4">
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-muted">₱</span>
+                            <input type="number" id="srp-${s.id}" value="${s.srp}" step="1" min="0"
+                                class="input pl-8 !py-2.5 font-mono" placeholder="0">
+                        </div>
+                    </td>
+                    <td class="px-5 py-4">
+                        <select id="stock-${s.id}" class="input !py-2.5 font-medium">
+                            <option value="in"  ${s.stock === "in" ? "selected" : ""}  class="stock-in">  ✅ In Stock</option>
+                            <option value="low" ${s.stock === "low" ? "selected" : ""} class="stock-low"> ⚠️ Low Stock</option>
+                            <option value="out" ${s.stock === "out" ? "selected" : ""} class="stock-out"> ❌ Out of Stock</option>
+                        </select>
+                    </td>
+                    <td class="px-5 py-4">
+                        <input type="text" id="note-${s.id}" value="${s.note.replace(/"/g, "&quot;")}"
+                            class="input !py-2.5 text-sm" placeholder="e.g. 3 left">
+                    </td>
+                </tr>
+            `,
+          )
+          .join("");
+        updateStats();
+      }
+
+      function updateStats() {
+        const inC = data.scents.filter((s) => s.stock === "in").length;
+        const lowC = data.scents.filter((s) => s.stock === "low").length;
+        const outC = data.scents.filter((s) => s.stock === "out").length;
+        document.getElementById("stat-total").textContent = data.scents.length;
+        document.getElementById("stat-in").textContent = inC;
+        document.getElementById("stat-low").textContent = lowC;
+        document.getElementById("stat-out").textContent = outC;
+      }
+
+      function showToast(msg) {
+        const t = document.getElementById("toast");
+        document.getElementById("toast-msg").textContent = msg;
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 3200);
+      }
+    </script>
+  </body>
+</html>
